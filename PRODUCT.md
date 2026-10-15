@@ -52,7 +52,7 @@ Good Chemistry was selected after parent desktop/mobile review. The final implem
 ## Confirmed founder details
 
 - Farzin Nasiri, Milan, Italy. Senior software engineer and AI engineer. Completed Politecnico di Milano qualification, supplied as MSc Mathematical Engineering - Statistical Learning. Concise wording: MSc · Statistical Learning; Politecnico di Milano graduate.
-- Alireza Kebriaei, London, UK. Software and Gen AI engineer. No degree claim supplied.
+- Alireza Kebriaei, London, UK. Senior software engineer and Gen AI engineer. No degree claim supplied.
 - Yazdan Zandiyevakili, Vienna, Austria. Researcher and software engineer. Master's · Data science, TU Wien. The degree is in progress; the visible caption follows the user's requested short wording without a graduation claim.
 
 ## Current revision
