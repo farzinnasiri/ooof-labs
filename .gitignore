@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.vercel/
+.env
+.env.*
+!.env.example
+.DS_Store
+.impeccable/
+shots/
+research/
+private/
+*.log
+output/
+.playwright-cli/
+assets/source/
+.vercel
+.env*

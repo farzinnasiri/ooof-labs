@@ -1,0 +1,740 @@
+@font-face {
+  font-family: "Bricolage Grotesque Variable";
+  src: url("@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2")
+    format("woff2");
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Instrument Sans Variable";
+  src: url("@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2")
+    format("woff2");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+:root {
+  font-family: "Instrument Sans Variable", sans-serif;
+  color: #203fe3;
+  background: #fff6df;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --blue: #203fe3;
+  --butter: #fff6df;
+  --coral: #ff806b;
+  --blue-ink: #273773;
+  --blue-muted: #485687;
+  --rule: #203fe32b;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 28px;
+  scrollbar-color: #203fe3 #fff6df;
+}
+body {
+  margin: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  text-underline-offset: 5px;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 6px;
+}
+::selection {
+  background: var(--coral);
+  color: #172052;
+}
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+a:active,
+button:active {
+  opacity: 0.75;
+}
+.page-width {
+  width: min(100% - 100px, 1400px);
+  margin-inline: auto;
+}
+.skip-link {
+  position: fixed;
+  z-index: 5;
+  top: 12px;
+  left: 12px;
+  padding: 15px 20px;
+  color: var(--blue);
+  background: var(--butter);
+  transform: translateY(-160%);
+}
+.skip-link:focus {
+  transform: none;
+}
+.hero-ground {
+  background: var(--blue);
+  color: var(--butter);
+}
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 106px;
+}
+.home {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.brand {
+  display: flex;
+  align-items: flex-end;
+  gap: 9px;
+}
+.brand-mark {
+  width: 132px;
+  height: auto;
+  overflow: visible;
+}
+.brand-labs {
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  padding-bottom: 2px;
+}
+.header-note {
+  margin-left: auto;
+  margin-right: 11vw;
+  font-size: 13px;
+}
+.header-contact {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  border: 1px solid #fff6df6b;
+  border-radius: 30px;
+  padding: 0 19px;
+  min-height: 44px;
+  font-size: 14px;
+}
+.header-contact svg {
+  width: 19px;
+  height: 19px;
+}
+.hero {
+  padding-top: 31px;
+}
+.hero-opening {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 7vw;
+  align-items: start;
+}
+h1 {
+  font-family: "Bricolage Grotesque Variable", sans-serif;
+  font-weight: 650;
+  font-size: clamp(64px, 6.85vw, 98px);
+  line-height: 0.99;
+  letter-spacing: -0.04em;
+}
+.hero-intro {
+  max-width: 346px;
+  padding-top: 8px;
+  justify-self: end;
+}
+.hero-intro p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+.primary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  min-height: 52px;
+  margin-top: 25px;
+  padding: 0 24px;
+  border-radius: 30px;
+  color: var(--blue);
+  background: var(--butter);
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform 180ms var(--ease);
+}
+.primary-action svg {
+  width: 20px;
+  height: 20px;
+}
+.hero-people {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 32px;
+  margin-top: 37px;
+}
+.founders {
+  display: flex;
+  width: 76%;
+  max-width: 950px;
+  align-items: start;
+  isolation: isolate;
+}
+.founder {
+  display: block;
+  position: relative;
+  width: 36%;
+  flex-shrink: 0;
+  min-width: 0;
+}
+.founder + .founder {
+  margin-left: -4%;
+}
+.portrait-ring {
+  display: block;
+  aspect-ratio: 1;
+  border: clamp(24px, 3.3vw, 48px) solid var(--coral);
+  border-radius: 46%;
+  background: var(--coral);
+  box-shadow:
+    0 14px 25px -17px #0919728c,
+    inset 0 2px 4px #ffb5a6;
+}
+.founder-ali {
+  z-index: 1;
+}
+.founder-yazdan {
+  z-index: 2;
+}
+.founder-ali .portrait-ring {
+  border-color: var(--butter);
+  background: var(--butter);
+  box-shadow:
+    0 14px 25px -17px #0919728c,
+    inset 0 2px 4px #ffffff;
+}
+.portrait-window {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+  border-radius: 43%;
+  background: #a69c8d;
+}
+/* A frame is precisely one panel wide. The image remains upright at every width. */
+.founder-image {
+  display: block;
+  position: absolute;
+  max-width: none;
+  width: 300%;
+  height: 200%;
+  left: calc(var(--panel) * -100%);
+  top: -5%;
+}
+.founder-caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding-inline: 7px;
+  font-size: 14px;
+  line-height: 1.25;
+  text-align: center;
+}
+.founder-caption svg {
+  width: 16px;
+  height: 16px;
+}
+.people-note {
+  font-size: 14px;
+  line-height: 1.55;
+  margin-bottom: 67px;
+}
+.hero-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 66px;
+  margin-top: 20px;
+  border-top: 1px solid #fff6df4a;
+  font-size: 14px;
+}
+.hero-next svg {
+  width: 21px;
+  height: 21px;
+}
+.work-ground {
+  color: var(--blue);
+  background: var(--butter);
+}
+.method {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 33px 0 32px;
+  border-bottom: 1px solid var(--rule);
+}
+.method h2 {
+  font-family: "Bricolage Grotesque Variable", sans-serif;
+  font-size: 26px;
+  line-height: 1.25;
+  font-weight: 550;
+  letter-spacing: -0.025em;
+}
+.method p {
+  max-width: 385px;
+  color: var(--blue-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.workflow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9vw;
+  padding: 42px 0 46px;
+}
+.workflow h2 {
+  font-family: "Bricolage Grotesque Variable", sans-serif;
+  font-size: 33px;
+  line-height: 1.07;
+  font-weight: 550;
+  letter-spacing: -0.025em;
+}
+.workflow-options {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 370px;
+  margin-top: 21px;
+}
+.workflow-options button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 24px;
+  color: var(--blue-muted);
+  background: transparent;
+  text-align: left;
+  font-size: 15px;
+  transition:
+    color 140ms ease-out,
+    background-color 140ms ease-out;
+}
+.workflow-options button svg {
+  width: 19px;
+  height: 19px;
+  opacity: 0;
+}
+.workflow-options button[aria-pressed="true"] {
+  background: var(--blue);
+  color: var(--butter);
+}
+.workflow-options button[aria-pressed="true"] svg {
+  opacity: 1;
+}
+.workflow-result {
+  max-width: 470px;
+  padding-top: 2px;
+  color: var(--blue-ink);
+}
+.example-label {
+  font-size: 11px;
+  color: var(--blue-muted);
+  margin-bottom: 17px;
+}
+.workflow h3 {
+  font-family: "Bricolage Grotesque Variable", sans-serif;
+  font-size: 32px;
+  font-weight: 550;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--blue);
+  margin-bottom: 16px;
+  max-width: 420px;
+}
+.workflow-explanation {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 435px;
+}
+.human-step {
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 9vw;
+  padding: 35px 0 24px;
+  border-top: 1px solid var(--rule);
+}
+.contact h2 {
+  font-family: "Bricolage Grotesque Variable", sans-serif;
+  font-size: 41px;
+  font-weight: 550;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+.contact-intro p {
+  color: var(--blue-muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 17px;
+}
+.contact-links {
+  max-width: 470px;
+}
+.contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 49px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 16px;
+}
+.profile-platform {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--blue-muted);
+}
+.contact-links svg {
+  width: 18px;
+  height: 18px;
+}
+.footer-line {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 35px;
+  font-size: 11px;
+  color: var(--blue-muted);
+}
+.footer-line a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .primary-action:hover {
+    transform: translateY(-3px);
+  }
+  .header-contact:hover {
+    background: #fff6df12;
+  }
+  .founder:hover .founder-caption {
+    text-decoration: underline;
+  }
+  .contact-links a:hover > span:first-child {
+    text-decoration: underline;
+  }
+  .workflow-options button:not([aria-pressed="true"]):hover {
+    background: #203fe310;
+    color: var(--blue);
+  }
+}
+@media (min-width: 1600px) {
+  .hero-people {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 1000px) {
+  .page-width {
+    width: calc(100% - 64px);
+  }
+  .header-note {
+    margin-right: 5vw;
+    font-size: 12px;
+  }
+  .hero-opening {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4vw;
+  }
+  h1 {
+    font-size: 7.7vw;
+  }
+  .hero-intro p {
+    font-size: 16px;
+  }
+  .founders {
+    width: 78%;
+  }
+  .people-note {
+    font-size: 12px;
+  }
+  .founder-caption {
+    font-size: 12px;
+    gap: 5px;
+  }
+  .method h2 {
+    max-width: 300px;
+    font-size: 24px;
+  }
+  .method p {
+    max-width: 320px;
+    font-size: 14px;
+  }
+  .workflow {
+    gap: 6vw;
+  }
+  .workflow h3 {
+    font-size: 29px;
+  }
+  .contact {
+    gap: 0 6vw;
+  }
+  .contact h2 {
+    font-size: 36px;
+  }
+}
+@media (max-width: 680px) {
+  html {
+    scroll-padding-top: 22px;
+  }
+  .page-width {
+    width: calc(100% - 48px);
+  }
+  .site-header {
+    height: 90px;
+    gap: 12px;
+  }
+  .brand-mark {
+    width: 103px;
+  }
+  .brand {
+    gap: 7px;
+  }
+  .brand-labs {
+    font-size: 14px;
+    padding-bottom: 1px;
+  }
+  .header-note {
+    display: none;
+  }
+  .header-contact {
+    margin-left: auto;
+    gap: 12px;
+    font-size: 12px;
+    padding-inline: 14px;
+  }
+  .header-contact svg {
+    width: 17px;
+    height: 17px;
+  }
+  .hero {
+    padding-top: 28px;
+  }
+  .hero-opening {
+    display: block;
+  }
+  h1 {
+    font-size: clamp(47px, 12.5vw, 80px);
+    line-height: 1.02;
+  }
+  .hero-intro {
+    padding: 0;
+    margin-top: 24px;
+    max-width: 340px;
+  }
+  .hero-intro p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .primary-action {
+    min-height: 48px;
+    font-size: 14px;
+    padding-inline: 21px;
+    margin-top: 22px;
+    gap: 26px;
+  }
+  .hero-people {
+    display: block;
+    margin-top: 36px;
+  }
+  .founders {
+    width: 100%;
+    max-width: 480px;
+  }
+  .founder {
+    width: 36%;
+  }
+  .founder + .founder {
+    margin-left: -4%;
+  }
+  .portrait-ring {
+    border-width: clamp(12px, 3.5vw, 22px);
+    border-radius: 45%;
+  }
+  .portrait-window {
+    border-radius: 41%;
+  }
+  .founder-caption {
+    min-height: 55px;
+    font-size: 11px;
+    padding-inline: 7px;
+    gap: 4px;
+  }
+  .founder-caption svg {
+    width: 13px;
+    height: 13px;
+  }
+  .people-note {
+    font-size: 12px;
+    margin: 13px 0 0;
+    line-height: 1.5;
+  }
+  .people-note br {
+    display: none;
+  }
+  .people-note br:after {
+    content: " ";
+  }
+  .hero-next {
+    min-height: 58px;
+    margin-top: 24px;
+    font-size: 12px;
+  }
+  .hero-next svg {
+    width: 20px;
+    height: 20px;
+  }
+  .method {
+    display: block;
+    padding: 27px 0 28px;
+  }
+  .method h2 {
+    max-width: none;
+    font-size: 24px;
+    max-width: 300px;
+  }
+  .method p {
+    max-width: 345px;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 13px;
+  }
+  .workflow {
+    display: block;
+    padding: 31px 0 35px;
+  }
+  .workflow h2 {
+    font-size: 30px;
+  }
+  .workflow-options {
+    flex-direction: row;
+    gap: 6px;
+    max-width: none;
+    margin-top: 21px;
+  }
+  .workflow-options button {
+    flex: 1;
+    min-width: 0;
+    min-height: 52px;
+    padding: 9px 10px;
+    border: 1px solid var(--rule);
+    font-size: 12px;
+    line-height: 1.3;
+  }
+  .workflow-options button[aria-pressed="true"] {
+    border-color: var(--blue);
+  }
+  .workflow-options button svg {
+    display: none;
+  }
+  .workflow-result {
+    margin-top: 28px;
+    min-height: 247px;
+    padding: 0;
+  }
+  .example-label {
+    font-size: 10px;
+    margin-bottom: 15px;
+  }
+  .workflow h3 {
+    font-size: 28px;
+    line-height: 1.12;
+    max-width: 330px;
+    margin-bottom: 15px;
+  }
+  .workflow-explanation {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .human-step {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 18px;
+  }
+  .contact {
+    display: block;
+    padding: 30px 0 17px;
+  }
+  .contact h2 {
+    font-size: 34px;
+  }
+  .contact-intro p {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  .contact-links {
+    margin-top: 23px;
+  }
+  .contact-links a {
+    min-height: 52px;
+    font-size: 16px;
+  }
+  .footer-line {
+    margin-top: 29px;
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

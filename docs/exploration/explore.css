@@ -1,0 +1,1346 @@
+:root {
+  font-family: "Instrument Sans Variable", sans-serif;
+  color: #222d53;
+  background: #f4f1ea;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+body {
+  margin: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  text-underline-offset: 5px;
+}
+button {
+  font: inherit;
+  color: inherit;
+}
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+svg {
+  display: block;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 6px;
+}
+::selection {
+  background: #d8e37c;
+  color: #222d53;
+}
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+a:active,
+button:active {
+  opacity: 0.75;
+}
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  background: #fff;
+  padding: 16px;
+  z-index: 10;
+  transform: translateY(-150%);
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+.explore-nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  min-height: 56px;
+  padding: 8px 32px;
+  background: #fcfbf8;
+  color: #222d53;
+  border-bottom: 1px solid #dcdcd5;
+  font-size: 13px;
+}
+.explore-name {
+  font-weight: 650;
+}
+.explore-name span {
+  font-weight: 400;
+  margin-left: 12px;
+  color: #5b6172;
+}
+.explore-nav > div {
+  display: flex;
+  gap: 8px;
+}
+.explore-nav > div a {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 15px;
+  border-radius: 24px;
+}
+.explore-nav a[aria-current] {
+  background: #222d53;
+  color: #fcfbf8;
+}
+.concept {
+  --ground: #f4f1ea;
+  --ink: #222d53;
+  --secondary: #515970;
+  --accent: #334dce;
+  --rule: #222d5333;
+  --gutter: clamp(24px, 3.5vw, 64px);
+  background: var(--ground);
+  color: var(--ink);
+  padding: 0 var(--gutter);
+  overflow: clip;
+  scroll-margin-top: 56px;
+}
+.site-header {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.home {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.brand {
+  display: flex;
+  align-items: flex-end;
+  gap: 9px;
+}
+.brand-mark {
+  width: 132px;
+  height: auto;
+  overflow: visible;
+}
+.brand-labs {
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  padding-bottom: 2px;
+}
+.header-note {
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: 11vw;
+  color: var(--secondary);
+}
+.header-contact {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 44px;
+  font-size: 16px;
+}
+.header-contact svg {
+  width: 21px;
+  height: 21px;
+}
+.text-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 48px;
+  font-size: 15px;
+  font-weight: 550;
+}
+.text-action svg {
+  width: 22px;
+}
+.gallery-hero {
+  padding: 40px 0 54px;
+}
+.gallery-message {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 8vw;
+  align-items: end;
+}
+.gallery h1 {
+  font-weight: 480;
+  font-size: clamp(64px, 7.4vw, 108px);
+  line-height: 0.99;
+  letter-spacing: -0.04em;
+}
+.gallery h1 br:nth-child(2) {
+  display: inline;
+}
+.gallery-last {
+  white-space: nowrap;
+}
+.headline-dot {
+  color: var(--accent);
+}
+.gallery-intro {
+  max-width: 355px;
+  padding-bottom: 2px;
+  justify-self: end;
+}
+.gallery-intro > p {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--secondary);
+  margin-bottom: 21px;
+}
+.gallery-people {
+  display: grid;
+  grid-template-columns: 1fr 2.05fr;
+  gap: 24px;
+  margin-top: 64px;
+}
+.gallery-people-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  padding: 8px 0 40px;
+  font-size: 21px;
+  line-height: 1.3;
+}
+.gallery-people-heading > span:last-child {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 14px;
+}
+.gallery-portraits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+  align-items: end;
+}
+.portrait {
+  display: block;
+  min-width: 0;
+}
+.portrait-image {
+  display: block;
+  position: relative;
+  aspect-ratio: 4/4.6;
+  background: #d5cbc1;
+  overflow: hidden;
+}
+.portrait-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 13px;
+  margin-top: 12px;
+  min-height: 32px;
+}
+.portrait-caption svg {
+  width: 17px;
+  height: 17px;
+}
+.portrait-ali .portrait-image {
+  background: #c5c8be;
+}
+.portrait-yazdan .portrait-image {
+  background: #bfc4d1;
+}
+.portrait-study .portrait-image:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow:
+    inset 0 15px 80px #ffffff15,
+    inset 0 -48px 100px #222d5312;
+}
+.study-subject {
+  position: absolute;
+  left: 16px;
+  top: 20px;
+  font-size: clamp(27px, 3vw, 48px);
+  font-weight: 450;
+  letter-spacing: -0.04em;
+  opacity: 0.95;
+}
+.study-caption {
+  position: absolute;
+  bottom: 18px;
+  left: 16px;
+  right: 12px;
+  font-size: 10px;
+  letter-spacing: 0.015em;
+  opacity: 0.8;
+}
+.people-note {
+  grid-column: 2;
+  font-size: 12px;
+  color: var(--secondary);
+  margin-top: -9px;
+}
+.method-line {
+  padding: 31px 0 34px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 32px;
+}
+.method-line > span {
+  font-size: 24px;
+  letter-spacing: -0.025em;
+}
+.method-line p {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 370px;
+  color: var(--secondary);
+}
+.workflow {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 8vw;
+  padding: 64px 0 72px;
+  border-top: 1px solid var(--rule);
+}
+.workflow h2 {
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  max-width: 280px;
+}
+.workflow-options {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+  margin-top: 26px;
+  max-width: 380px;
+}
+.workflow-options button {
+  padding: 12px 0;
+  min-height: 48px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  border-bottom: 1px solid var(--rule);
+  font-size: 16px;
+  color: var(--secondary);
+  transition: color 150ms ease-out;
+}
+.workflow-options button svg {
+  width: 20px;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    opacity 150ms ease-out,
+    transform 180ms var(--ease);
+}
+.workflow-options button[aria-pressed="true"] {
+  color: var(--ink);
+  font-weight: 600;
+}
+.workflow-options button[aria-pressed="true"] svg {
+  opacity: 1;
+  transform: translateX(0);
+}
+.workflow-result {
+  padding-top: 3px;
+  max-width: 440px;
+}
+.example-label {
+  font-size: 11px;
+  color: var(--secondary);
+  display: block;
+  margin-bottom: 22px;
+}
+.workflow-result h3 {
+  font-size: 31px;
+  font-weight: 450;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+.workflow-result > p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--secondary);
+}
+.workflow-result .human-step {
+  font-size: 14px;
+  margin-top: 20px;
+  color: var(--ink);
+  max-width: 350px;
+}
+.contact {
+  padding: 48px 0 24px;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 32px 8vw;
+}
+.contact h2 {
+  font-size: 38px;
+  font-weight: 450;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+.contact p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--secondary);
+  margin-top: 20px;
+}
+.contact-links {
+  max-width: 440px;
+  padding-top: 2px;
+}
+.contact-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 17px;
+}
+.contact-links svg {
+  width: 20px;
+}
+.contact-signoff {
+  grid-column: 1/-1;
+  font-size: 11px;
+  color: var(--secondary);
+  margin-top: 35px;
+}
+.gallery .contact {
+  padding-bottom: 30px;
+}
+.cinema {
+  --ground: #1c211e;
+  --ink: #f5ede0;
+  --secondary: #c7c5bb;
+  --accent: #efb879;
+  --rule: #f5ede02d;
+}
+.cinema::selection {
+  background: #efb879;
+  color: #1c211e;
+}
+.cinema .brand-mark {
+  width: 126px;
+}
+.cinema .header-contact {
+  color: var(--accent);
+}
+.cinema-hero {
+  padding-top: 30px;
+}
+.cinema-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--secondary);
+}
+.cinema-cta {
+  width: 107px;
+  height: 107px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transform: rotate(-12deg);
+  color: var(--accent);
+}
+.cinema-cta svg {
+  width: 19px;
+  height: 19px;
+}
+.cinema-main {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 5vw;
+  align-items: end;
+  margin-top: -8px;
+  position: relative;
+  z-index: 1;
+}
+.cinema h1 {
+  font-family: "Fraunces Variable", serif;
+  font-size: clamp(62px, 6.7vw, 96px);
+  font-weight: 350;
+  font-variation-settings:
+    "SOFT" 0,
+    "WONK" 0;
+  line-height: 1.01;
+  letter-spacing: -0.04em;
+}
+.cinema h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+.cinema-caption {
+  max-width: 310px;
+  justify-self: end;
+  padding-bottom: 2px;
+}
+.cinema-caption p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  color: var(--secondary);
+}
+.cinema-caption .text-action {
+  color: var(--accent);
+}
+.cinema-portraits {
+  display: grid;
+  grid-template-columns: 1fr 1.18fr 1fr 0.72fr;
+  gap: 15px;
+  align-items: end;
+  margin-top: 39px;
+}
+.cinema-portraits .portrait-image {
+  aspect-ratio: 4/4.2;
+  background: #44463d;
+}
+.cinema-portraits .portrait-ali .portrait-image {
+  aspect-ratio: 4/4.6;
+  background: #7d6550;
+}
+.cinema-portraits .portrait-yazdan .portrait-image {
+  aspect-ratio: 4/4.2;
+  background: #3d5049;
+}
+.cinema .study-subject {
+  font-family: "Fraunces Variable", serif;
+  font-weight: 350;
+  color: #f5ede0;
+  opacity: 0.8;
+  font-size: 45px;
+}
+.cinema .study-caption {
+  color: #f5ede0;
+  opacity: 0.9;
+}
+.cinema .portrait-caption {
+  color: var(--secondary);
+  font-size: 12px;
+}
+.cinema-photo-note {
+  font-size: 16px;
+  line-height: 1.4;
+  padding: 0 0 49px 16px;
+  color: var(--accent);
+}
+.cinema .method-line {
+  margin-top: 40px;
+}
+.cinema .method-line > span,
+.cinema .workflow h2,
+.cinema .workflow h3,
+.cinema .contact h2 {
+  font-family: "Fraunces Variable", serif;
+  font-weight: 350;
+}
+.cinema .workflow-result h3 {
+  font-size: 35px;
+}
+.cinema .workflow-options button[aria-pressed="true"] {
+  color: var(--accent);
+}
+.cinema .contact-links a {
+  color: var(--accent);
+}
+.chemistry {
+  --ground: #203fe3;
+  --ink: #fff6df;
+  --secondary: #e0e5ff;
+  --accent: #ff806b;
+  --rule: #fff6df4d;
+}
+.chemistry::selection {
+  background: #ff806b;
+  color: #172052;
+}
+.chemistry .brand-mark {
+  width: 134px;
+}
+.chemistry .header-note {
+  color: var(--ink);
+}
+.chemistry .header-contact {
+  border: 1px solid var(--rule);
+  border-radius: 28px;
+  padding: 0 19px;
+  min-height: 44px;
+  font-size: 14px;
+}
+.chemistry-hero {
+  padding-top: 33px;
+  position: relative;
+}
+.chemistry-opening {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 8vw;
+  align-items: start;
+}
+.chemistry h1 {
+  font-family: "Bricolage Grotesque Variable", sans-serif;
+  font-size: clamp(64px, 7vw, 100px);
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  max-width: 750px;
+}
+.chemistry-intro {
+  padding-top: 10px;
+  max-width: 340px;
+  justify-self: end;
+}
+.chemistry-intro p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--secondary);
+}
+.pill-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 30px;
+  background: var(--ink);
+  color: var(--ground);
+  margin-top: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: transform 180ms var(--ease);
+}
+.pill-action svg {
+  width: 21px;
+}
+.chemistry-objects {
+  position: relative;
+  margin-top: 36px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 282px;
+}
+.ooo-objects {
+  display: flex;
+  align-items: center;
+  position: relative;
+  isolation: isolate;
+  padding: 0 0 8px 5px;
+  width: 78%;
+  max-width: 930px;
+}
+.o-object {
+  width: 37%;
+  flex-shrink: 0;
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: 46%;
+  border: clamp(23px, 3.7vw, 59px) solid #ff806b;
+  background: #203fe3;
+  box-shadow:
+    inset 0 5px 11px #d03b3230,
+    0 18px 26px -14px #071b8560;
+  transform: rotate(-13deg);
+  display: block;
+}
+.o-object:before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 46%;
+  box-shadow:
+    0 -3px 2px #ffb8a77a,
+    inset 0 -2px 2px #c8354059;
+  pointer-events: none;
+}
+.o-object + .o-object {
+  margin-left: -5%;
+  z-index: 1;
+}
+.o-ali {
+  transform: rotate(11deg);
+  border-color: #fff6df;
+  box-shadow:
+    inset 0 5px 11px #cac0ac30,
+    0 18px 26px -14px #071b8560;
+}
+.o-ali:before {
+  box-shadow:
+    0 -3px 2px #ffffffb0,
+    inset 0 -2px 2px #c1b7a159;
+}
+.o-yazdan {
+  transform: rotate(-9deg);
+  border-color: #ff806b;
+  z-index: 2 !important;
+}
+.o-window {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 42%;
+  overflow: hidden;
+  position: relative;
+}
+.o-window > span {
+  font-family: "Bricolage Grotesque Variable", sans-serif;
+  font-size: clamp(17px, 2vw, 32px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+.o-window img {
+  object-position: 50% 38%;
+}
+.object-name {
+  position: absolute;
+  bottom: calc(-1 * clamp(23px, 3.7vw, 59px) - 39px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.object-name svg {
+  width: 16px;
+  height: 16px;
+}
+.objects-note {
+  font-size: 14px;
+  line-height: 1.5;
+  flex-shrink: 0;
+  margin-bottom: 38px;
+}
+.chemistry-next {
+  margin-top: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 15px;
+  min-height: 57px;
+  border-top: 1px solid var(--rule);
+}
+.chemistry-next svg {
+  transform: rotate(90deg);
+  width: 21px;
+}
+.chemistry .method-line {
+  padding-top: 27px;
+}
+.chemistry .method-line > span,
+.chemistry .workflow h2,
+.chemistry .workflow h3,
+.chemistry .contact h2 {
+  font-family: "Bricolage Grotesque Variable", sans-serif;
+  font-weight: 550;
+}
+.chemistry .workflow-options button[aria-pressed="true"] {
+  color: var(--ink);
+}
+.chemistry .workflow-result h3 {
+  font-size: 34px;
+}
+.chemistry .example-label {
+  color: var(--secondary);
+}
+@media (hover: hover) and (pointer: fine) {
+  .text-action:hover svg,
+  .header-contact:hover svg {
+    transform: translateX(3px);
+  }
+  .text-action svg,
+  .header-contact svg {
+    transition: transform 180ms var(--ease);
+  }
+  .contact-links a:hover {
+    color: var(--accent);
+  }
+  .portrait:hover .portrait-caption {
+    text-decoration: underline;
+  }
+  .portrait img {
+    transition: transform 250ms var(--ease);
+  }
+  .portrait:hover img {
+    transform: scale(1.035);
+  }
+  .pill-action:hover {
+    transform: translateY(-3px);
+  }
+  .workflow-options button:hover {
+    color: var(--ink);
+  }
+  .explore-nav > div a:hover {
+    background: #e9e9e1;
+    color: #222d53;
+  }
+  .explore-nav > div a[aria-current]:hover {
+    background: #222d53;
+    color: #fff;
+  }
+  .o-object {
+    transition: transform 220ms var(--ease);
+  }
+  .o-object:hover {
+    transform: translateY(-9px) rotate(0);
+  }
+  .chemistry .contact-links a:hover {
+    color: var(--ink);
+  }
+}
+@media (min-width: 1600px) {
+  .concept {
+    padding-left: max(64px, calc((100vw - 1450px) / 2));
+    padding-right: max(64px, calc((100vw - 1450px) / 2));
+  }
+  .gallery h1 {
+    font-size: 108px;
+  }
+  .gallery-portraits .portrait-image {
+    aspect-ratio: 4/4;
+  }
+  .cinema-portraits .portrait-image {
+    aspect-ratio: 4/3.6;
+  }
+  .cinema-portraits .portrait-ali .portrait-image {
+    aspect-ratio: 4/4;
+  }
+  .ooo-objects {
+    max-width: 1000px;
+  }
+}
+@media (max-width: 1000px) {
+  .header-note {
+    margin-right: 5vw;
+    font-size: 12px;
+  }
+  .site-header {
+    height: 105px;
+  }
+  .gallery-message {
+    gap: 4vw;
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .gallery h1 {
+    font-size: 8.8vw;
+  }
+  .gallery-intro > p {
+    font-size: 16px;
+  }
+  .gallery-people {
+    grid-template-columns: 0.7fr 2fr;
+    margin-top: 48px;
+  }
+  .gallery-people-heading {
+    font-size: 18px;
+  }
+  .cinema-main {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4vw;
+  }
+  .cinema h1 {
+    font-size: 7.7vw;
+  }
+  .cinema-caption p {
+    font-size: 14px;
+  }
+  .cinema-photo-note {
+    font-size: 13px;
+    padding-left: 4px;
+  }
+  .chemistry h1 {
+    font-size: 8.2vw;
+  }
+  .chemistry-opening {
+    grid-template-columns: 1.35fr 1fr;
+    gap: 5vw;
+  }
+  .chemistry-intro p {
+    font-size: 15px;
+  }
+  .chemistry-objects {
+    min-height: 230px;
+    gap: 16px;
+  }
+  .objects-note {
+    font-size: 12px;
+    max-width: 130px;
+  }
+  .workflow {
+    gap: 6vw;
+  }
+  .workflow h2 {
+    font-size: 29px;
+  }
+  .workflow-result h3 {
+    font-size: 28px;
+  }
+  .workflow-result > p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 680px) {
+  html {
+    scroll-padding-top: 102px;
+  }
+  .explore-nav {
+    padding: 8px 16px;
+    flex-direction: column;
+    gap: 3px;
+    align-items: stretch;
+    font-size: 11px;
+  }
+  .explore-name {
+    text-align: center;
+    min-height: 20px;
+  }
+  .explore-nav > div {
+    justify-content: center;
+    gap: 0;
+  }
+  .explore-nav > div a {
+    padding: 0 13px;
+    min-height: 36px;
+  }
+  .concept {
+    scroll-margin-top: 83px;
+  }
+  .site-header {
+    height: 94px;
+    gap: 12px;
+  }
+  .brand-mark {
+    width: 104px !important;
+  }
+  .brand-labs {
+    font-size: 14px;
+    padding-bottom: 2px;
+  }
+  .brand {
+    gap: 6px;
+  }
+  .header-note {
+    display: none;
+  }
+  .header-contact {
+    font-size: 14px;
+    gap: 8px;
+  }
+  .header-contact svg {
+    width: 19px;
+    height: 19px;
+  }
+  .gallery-hero {
+    padding: 23px 0 31px;
+  }
+  .gallery-message {
+    display: block;
+  }
+  .gallery h1 {
+    font-size: clamp(54px, 12vw, 80px);
+    line-height: 1.02;
+  }
+  .gallery h1 br:nth-child(2) {
+    display: inline;
+  }
+  .gallery-intro {
+    max-width: 330px;
+    padding: 0;
+    margin-top: 26px;
+  }
+  .gallery-intro > p {
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+  .text-action {
+    font-size: 14px;
+    gap: 12px;
+  }
+  .gallery-people {
+    display: block;
+    margin-top: 37px;
+  }
+  .gallery-people-heading {
+    padding: 0 0 16px;
+    flex-direction: row;
+    align-items: end;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+  .gallery-people-heading > span:last-child {
+    font-size: 11px;
+    gap: 6px;
+  }
+  .gallery-people-heading svg {
+    width: 18px;
+    height: 18px;
+  }
+  .gallery-portraits {
+    gap: 8px;
+  }
+  .gallery-portraits .portrait-image {
+    aspect-ratio: 3/4.5;
+  }
+  .portrait-caption {
+    font-size: 10px;
+    margin-top: 5px;
+    min-height: 30px;
+    line-height: 1.2;
+    align-items: start;
+    padding-top: 4px;
+  }
+  .portrait-caption svg {
+    width: 13px;
+    height: 13px;
+  }
+  .study-subject {
+    font-size: 19px;
+    left: 9px;
+    top: 15px;
+  }
+  .study-caption {
+    font-size: 8px;
+    line-height: 1.25;
+    left: 9px;
+    bottom: 12px;
+    right: 8px;
+  }
+  .people-note {
+    font-size: 10px;
+    margin-top: 9px;
+  }
+  .method-line {
+    display: block;
+    padding: 25px 0 27px;
+  }
+  .method-line > span {
+    display: block;
+    font-size: 23px;
+  }
+  .method-line p {
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 1.55;
+  }
+  .workflow {
+    display: block;
+    padding: 33px 0 39px;
+  }
+  .workflow h2 {
+    font-size: 28px;
+    max-width: 260px;
+  }
+  .workflow-options {
+    flex-direction: row;
+    gap: 7px;
+    max-width: none;
+    margin-top: 19px;
+    flex-wrap: wrap;
+  }
+  .workflow-options button {
+    font-size: 12px;
+    line-height: 1.3;
+    flex: 1;
+    min-width: 85px;
+    min-height: 48px;
+    padding: 9px;
+    border: 1px solid var(--rule);
+    border-radius: 0;
+    display: block;
+  }
+  .workflow-options button svg {
+    display: none;
+  }
+  .workflow-options button[aria-pressed="true"] {
+    color: var(--ground);
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+  .workflow-result {
+    margin-top: 27px;
+    min-height: 235px;
+  }
+  .example-label {
+    font-size: 10px;
+    margin-bottom: 15px;
+  }
+  .workflow-result h3 {
+    font-size: 26px;
+    max-width: 330px;
+    margin-bottom: 13px;
+  }
+  .workflow-result > p {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .workflow-result .human-step {
+    font-size: 13px;
+    margin-top: 16px;
+    line-height: 1.5;
+  }
+  .contact {
+    display: block;
+    padding-top: 31px;
+  }
+  .contact h2 {
+    font-size: 34px;
+  }
+  .contact p {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  .contact-links {
+    margin-top: 23px;
+  }
+  .contact-links a {
+    font-size: 16px;
+    min-height: 52px;
+  }
+  .contact-signoff {
+    display: block;
+    font-size: 10px;
+    margin-top: 35px;
+  }
+  .cinema-hero {
+    padding-top: 9px;
+  }
+  .cinema-topline {
+    font-size: 12px;
+    align-items: center;
+  }
+  .cinema-cta {
+    width: 76px;
+    height: 76px;
+    font-size: 12px;
+    gap: 3px;
+  }
+  .cinema-cta svg {
+    width: 15px;
+    height: 15px;
+  }
+  .cinema-main {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 26px;
+    gap: 0;
+  }
+  .cinema h1 {
+    font-size: clamp(48px, 11.9vw, 74px);
+    line-height: 1.04;
+  }
+  .cinema-caption {
+    max-width: 310px;
+    margin-top: 25px;
+    padding: 0;
+  }
+  .cinema-caption p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+  .cinema-portraits {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 27px;
+  }
+  .cinema-portraits .portrait-image,
+  .cinema-portraits .portrait-yazdan .portrait-image {
+    aspect-ratio: 3/5.1;
+  }
+  .cinema-portraits .portrait-ali .portrait-image {
+    aspect-ratio: 3/5.8;
+  }
+  .cinema .study-subject {
+    font-size: 20px;
+    left: 9px;
+    top: 16px;
+  }
+  .cinema .portrait-caption {
+    font-size: 10px;
+  }
+  .cinema-photo-note {
+    display: none;
+  }
+  .cinema .method-line {
+    margin-top: 28px;
+  }
+  .cinema .workflow-result h3 {
+    font-size: 29px;
+  }
+  .cinema .workflow-options button[aria-pressed="true"] {
+    color: var(--ground);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  .chemistry .header-contact {
+    font-size: 12px;
+    min-height: 42px;
+    padding: 0 13px;
+  }
+  .chemistry-hero {
+    padding-top: 25px;
+  }
+  .chemistry-opening {
+    display: block;
+  }
+  .chemistry h1 {
+    font-size: clamp(50px, 12.5vw, 78px);
+    line-height: 1.02;
+  }
+  .chemistry-intro {
+    max-width: 330px;
+    padding: 0;
+    margin-top: 25px;
+  }
+  .chemistry-intro p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .pill-action {
+    min-height: 48px;
+    margin-top: 22px;
+    padding: 0 21px;
+    font-size: 14px;
+    gap: 25px;
+  }
+  .chemistry-objects {
+    min-height: 0;
+    display: block;
+    margin: 41px 0 0;
+    padding-bottom: 25px;
+  }
+  .ooo-objects {
+    width: 100%;
+    padding: 0 4px 8px;
+  }
+  .o-object {
+    border-width: clamp(18px, 5.4vw, 36px);
+    width: 37%;
+    border-radius: 45%;
+  }
+  .o-object:before {
+    inset: -3px;
+  }
+  .o-object + .o-object {
+    margin-left: -6%;
+  }
+  .o-window > span {
+    font-size: clamp(13px, 3.8vw, 22px);
+  }
+  .object-name {
+    bottom: calc(-1 * clamp(18px, 5.4vw, 36px) - 31px);
+    font-size: 9px;
+    gap: 2px;
+  }
+  .object-name svg {
+    width: 10px;
+    height: 10px;
+  }
+  .objects-note {
+    margin-top: 49px;
+    margin-bottom: 0;
+    font-size: 12px;
+    max-width: none;
+    line-height: 1.45;
+  }
+  .objects-note br {
+    display: contents;
+  }
+  .objects-note br:after {
+    content: " ";
+  }
+  .chemistry-next {
+    margin-top: 5px;
+    font-size: 12px;
+    min-height: 53px;
+  }
+  .chemistry .method-line > span {
+    font-size: 23px;
+  }
+  .chemistry .workflow-result h3 {
+    font-size: 28px;
+  }
+  .chemistry .workflow-options button {
+    border-radius: 24px;
+    min-height: 49px;
+  }
+  .chemistry .workflow-options button[aria-pressed="true"] {
+    color: var(--ground);
+  }
+  .chemistry .workflow h2 {
+    max-width: 280px;
+  }
+  .chemistry .contact h2 {
+    font-size: 34px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
