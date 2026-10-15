@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Delegated in the brief. Vite with a small web implementation; the exploration is plain HTML and CSS. The final site can use React where state makes the workflow example easier to maintain.
+Delegated in the brief. Static HTML/CSS and a small JavaScript workflow selector, built with Vite. The exploration is also HTML/CSS.
 
 ## Users
 
@@ -32,7 +32,7 @@ Ooof Labs. Warm, confident, human, creative. Three founders: Farzin Nasiri, Alir
 - Alireza Kebriaei, also called Ali: https://www.linkedin.com/in/alireza-kebriaei/
 - Yazdan: https://www.linkedin.com/in/yazdanzv/
 
-The parent will supply generated studio portraits. The portrait mapping is confirmed: long hair is Farzin, tuxedo is Alireza, glasses is Yazdan. Only public generated portraits may enter the repository. No private source photos.
+The parent supplied approved generated studio portraits. The portrait mapping is confirmed: long hair is Farzin, tuxedo is Alireza, glasses is Yazdan. Only public generated portraits may enter the repository. No private source photos.
 
 ## Product principles
 
@@ -43,7 +43,7 @@ The parent will supply generated studio portraits. The portrait mapping is confi
 
 ## Delivery
 
-Public GitHub repository under farzinnasiri. Production Vercel deployment connected to main, preferably oooflabs.vercel.app. Authorized by the user; publish after the parent's direction selection and final product/browser review.
+Public GitHub repository: https://github.com/farzinnasiri/ooof-labs. Production: https://oooflabs.vercel.app. Vercel is connected to GitHub main. The user authorized publication and the parent approved the rendered product for release.
 
 ## Confirmed delivery decisions
 

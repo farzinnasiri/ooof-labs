@@ -26,9 +26,9 @@ The production output is `dist/`. Fonts and images are served from the same depl
 
 GitHub: https://github.com/farzinnasiri/ooof-labs
 
-Vercel project: `oooflabs`, under `farzinnasiris-projects`. Intended production address: https://oooflabs.vercel.app. Vercel uses `main` for production, `npm ci` to install, `npm run build` to build, and `dist` as output. Project settings are also recorded in `vercel.json`.
+Vercel project: `oooflabs`, under `farzinnasiris-projects`. Production: https://oooflabs.vercel.app. Vercel uses `main` for production, `npm ci` to install, `npm run build` to build, and `dist` as output. Project settings are also recorded in `vercel.json`.
 
-The initial build is awaiting final parent product/browser review before the coordinated production release. A Git integration can deploy automatically when main is pushed. Deployment status is reported in the implementation handoff rather than assumed from this file.
+The parent approved the rendered product for release. Its review is recorded in `CRITIQUE.md`. The production site is public and serves its fonts and images without authentication. GitHub `main` is connected to Vercel production; pushes to `main` deploy automatically.
 
 ## Team and content
 
