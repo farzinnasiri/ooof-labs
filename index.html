@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#203fe3" />
+    <meta name="theme-color" content="#edf1ef" />
+    <script src="/theme.js"></script>
     <meta
       name="description"
       content="We help companies become AI native. Ooof Labs works with your team to build useful AI into the way your business runs."
@@ -22,12 +23,15 @@
       content="We help companies become AI native. We work with your team to build useful AI into the way your business runs."
     />
     <meta property="og:url" content="https://oooflabs.vercel.app/" />
-    <meta property="og:image" content="https://oooflabs.vercel.app/og.png" />
+    <meta
+      property="og:image"
+      content="https://oooflabs.vercel.app/og.png?v=2"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Ooof Labs. AI belongs in the everyday. Three founder portraits framed in coral and butter O forms on cobalt blue."
+      content="Ooof Labs. AI belongs in the everyday. Farzin Nasiri, Alireza Kebriaei and Yazdan Zandiyevakili framed in the Ooof wordmark. Mineral, petrol and copper."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -38,42 +42,132 @@
       name="twitter:description"
       content="We help companies become AI native. Useful AI, built into the way your business runs."
     />
-    <meta name="twitter:image" content="https://oooflabs.vercel.app/og.png" />
+    <meta
+      name="twitter:image"
+      content="https://oooflabs.vercel.app/og.png?v=2"
+    />
     <title>Ooof Labs · AI belongs in the everyday.</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ooof Labs",
+        "url": "https://oooflabs.vercel.app/",
+        "founder": [
+          {
+            "@type": "Person",
+            "name": "Farzin Nasiri",
+            "jobTitle": "Senior software engineer and AI engineer",
+            "sameAs": "https://www.linkedin.com/in/farzin-nasiri/",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Milan",
+              "addressCountry": "IT"
+            }
+          },
+          {
+            "@type": "Person",
+            "name": "Alireza Kebriaei",
+            "jobTitle": "Software & Gen AI engineer",
+            "sameAs": "https://www.linkedin.com/in/alireza-kebriaei/",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "GB"
+            }
+          },
+          {
+            "@type": "Person",
+            "name": "Yazdan Zandiyevakili",
+            "jobTitle": "Researcher & software engineer",
+            "sameAs": "https://www.linkedin.com/in/yazdanzv/",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Vienna",
+              "addressCountry": "AT"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="hero-ground" id="top">
       <header class="site-header page-width">
-        <a class="home" href="#top" aria-label="Ooof Labs home">
-          <span class="brand" role="img" aria-label="Ooof Labs"
-            ><svg class="brand-mark" viewBox="0 0 162 52" aria-hidden="true">
-              <g fill="none" stroke="currentColor" stroke-width="9">
-                <ellipse cx="24" cy="30" rx="17" ry="17" />
-                <ellipse cx="63" cy="30" rx="17" ry="17" />
-                <ellipse cx="102" cy="30" rx="17" ry="17" />
-                <path d="M134 47V17q0-12 14-12h7M122 23h32" />
-              </g></svg
-            ><span class="brand-labs" aria-hidden="true">labs</span></span
-          >
-        </a>
-        <span class="header-note">An independent AI consultancy</span>
-        <a class="header-contact" href="#contact"
-          >Let's talk
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path
-              d="m6 18 12-12M6 6h12v12"
+        <a class="home" href="#top"
+          ><span class="brand-lockup"
+            ><span class="brand" role="img" aria-label="Ooof Labs"
+              ><svg class="brand-mark" viewBox="0 0 162 52" aria-hidden="true">
+                <g fill="none" stroke="currentColor" stroke-width="9">
+                  <ellipse cx="24" cy="30" rx="17" ry="17" />
+                  <ellipse cx="63" cy="30" rx="17" ry="17" />
+                  <ellipse cx="102" cy="30" rx="17" ry="17" />
+                  <path d="M134 47V17q0-12 14-12h7M122 23h32" />
+                </g></svg
+              ><span class="brand-labs" aria-hidden="true">labs</span></span
+            ><span class="header-note"
+              >An independent AI consultancy</span
+            ></span
+          ></a
+        >
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="#practice">How we work</a
+          ><a href="#founders">The founders</a>
+        </nav>
+        <div class="header-actions">
+          <label class="theme-control"
+            ><svg
+              class="icon theme-icon"
+              viewBox="0 0 24 24"
+              fill="none"
               stroke="currentColor"
               stroke-width="1.6"
               stroke-linecap="round"
               stroke-linejoin="round"
-            /></svg
-        ></a>
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="8" />
+              <path d="M12 4v16" />
+              <path
+                d="M12 4a8 8 0 0 1 0 16Z"
+                fill="currentColor"
+                stroke="none"
+              /></svg
+            ><span class="sr-only"
+              >Colour theme. Auto follows your local time.</span
+            ><select
+              id="theme-select"
+              aria-label="Colour theme. Auto follows your local time."
+            >
+              <option value="auto">Auto</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select></label
+          ><a class="header-contact" href="#founders"
+            >Let's talk
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m6 18 12-12M6 6h12v12" /></svg
+          ></a>
+        </div>
       </header>
     </div>
     <main id="main">
       <div class="hero-ground">
-        <section class="hero page-width" aria-labelledby="hero-title">
+        <section
+          class="hero page-width"
+          data-chapter="hero"
+          aria-labelledby="hero-title"
+        >
           <div class="hero-opening">
             <h1 id="hero-title">AI belongs in<br />the everyday.</h1>
             <div class="hero-intro">
@@ -81,310 +175,462 @@
                 We help companies become AI native. We work with your team to
                 build useful AI into the way your business runs.
               </p>
-              <a class="primary-action" href="#contact"
+              <a class="primary-action" href="#founders"
                 >Let's talk
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path
-                    d="m6 18 12-12M6 6h12v12"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  /></svg
+                <svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m6 18 12-12M6 6h12v12" /></svg
               ></a>
             </div>
           </div>
           <div class="hero-people">
-            <!-- AI-assisted founder portraits. Exact generation prompt and approved mapping in PORTRAITS.md. -->
-            <div
-              class="founders"
-              role="group"
-              aria-label="Meet the co-founders"
-            >
-              <a
-                class="founder founder-farzin"
-                href="https://www.linkedin.com/in/farzin-nasiri/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Farzin Nasiri, co-founder, on LinkedIn"
+            <div class="brand-stage">
+              <div
+                class="founders"
+                id="founders"
+                tabindex="-1"
+                role="group"
+                aria-label="Ooof Labs. Connect with a co-founder on LinkedIn."
               >
-                <span class="portrait-ring"
-                  ><span class="portrait-window"
-                    ><img
-                      class="founder-image"
-                      src="/images/founders-studio.webp"
-                      width="1536"
-                      height="1024"
-                      alt=""
-                      fetchpriority="high"
-                      decoding="async"
-                      style="--panel: 0" /></span
-                ></span>
-                <span class="founder-caption"
-                  ><span>Farzin Nasiri</span
-                  ><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path
-                      d="m6 18 12-12M6 6h12v12"
-                      stroke="currentColor"
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    /></svg
-                ></span>
-              </a>
-              <a
-                class="founder founder-ali"
-                href="https://www.linkedin.com/in/alireza-kebriaei/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Alireza Kebriaei, co-founder, on LinkedIn"
-              >
-                <span class="portrait-ring"
-                  ><span class="portrait-window"
-                    ><img
-                      class="founder-image"
-                      src="/images/founders-studio.webp"
-                      width="1536"
-                      height="1024"
-                      alt=""
-                      decoding="async"
-                      style="--panel: 1" /></span
-                ></span>
-                <span class="founder-caption"
-                  ><span>Alireza Kebriaei</span
-                  ><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path
-                      d="m6 18 12-12M6 6h12v12"
-                      stroke="currentColor"
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    /></svg
-                ></span>
-              </a>
-              <a
-                class="founder founder-yazdan"
-                href="https://www.linkedin.com/in/yazdanzv/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Yazdan, co-founder, on LinkedIn"
-              >
-                <span class="portrait-ring"
-                  ><span class="portrait-window"
-                    ><img
-                      class="founder-image"
-                      src="/images/founders-studio.webp"
-                      width="1536"
-                      height="1024"
-                      alt=""
-                      decoding="async"
-                      style="--panel: 2" /></span
-                ></span>
-                <span class="founder-caption"
-                  ><span>Yazdan</span
-                  ><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path
-                      d="m6 18 12-12M6 6h12v12"
-                      stroke="currentColor"
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    /></svg
-                ></span>
-              </a>
+                <!-- AI-assisted portraits. Confirmed Farzin / Ali / Yazdan order. Corrected source and full prompts in PORTRAITS.md. No CSS mirroring. -->
+                <a
+                  class="founder founder-farzin"
+                  href="https://www.linkedin.com/in/farzin-nasiri/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span class="portrait-ring"
+                    ><span class="portrait-window"
+                      ><span class="portrait-source"
+                        ><img
+                          class="founder-image"
+                          src="/images/founders-studio-v2.webp"
+                          width="1536"
+                          height="1024"
+                          alt=""
+                          decoding="async"
+                          fetchpriority="high"
+                          style="--panel: 0" /></span></span
+                  ></span>
+                  <span class="founder-caption"
+                    ><span class="founder-name">Farzin Nasiri</span
+                    ><span class="founder-role"
+                      ><span>Senior software engineer</span
+                      ><span>AI engineer</span></span
+                    ><span class="founder-degree"
+                      ><svg
+                        class="icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="m2 9 10-5 10 5-10 5L2 9Zm4 2v6c4 3 8 3 12 0v-6M22 9v7"
+                        /></svg
+                      ><span
+                        >MSc · Statistical Learning<span class="school"
+                          >Politecnico di Milano graduate</span
+                        ></span
+                      ></span
+                    ><span class="founder-city"
+                      ><svg
+                        class="icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M19 10c0 5-7 10-7 10S5 15 5 10a7 7 0 1 1 14 0Z"
+                        />
+                        <circle cx="12" cy="10" r="2" /></svg
+                      >Milan, Italy</span
+                    ><span class="founder-link"
+                      >LinkedIn
+                      <svg
+                        class="icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="m6 18 12-12M6 6h12v12" /></svg></span
+                  ></span> </a
+                ><a
+                  class="founder founder-ali"
+                  href="https://www.linkedin.com/in/alireza-kebriaei/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span class="portrait-ring"
+                    ><span class="portrait-window"
+                      ><span class="portrait-source"
+                        ><img
+                          class="founder-image"
+                          src="/images/founders-studio-v2.webp"
+                          width="1536"
+                          height="1024"
+                          alt=""
+                          decoding="async"
+                          style="--panel: 1" /></span></span
+                  ></span>
+                  <span class="founder-caption"
+                    ><span class="founder-name">Alireza Kebriaei</span
+                    ><span class="founder-role"
+                      ><span>Software engineer</span
+                      ><span>Gen AI engineer</span></span
+                    ><span class="founder-city"
+                      ><svg
+                        class="icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M19 10c0 5-7 10-7 10S5 15 5 10a7 7 0 1 1 14 0Z"
+                        />
+                        <circle cx="12" cy="10" r="2" /></svg
+                      >London, UK</span
+                    ><span class="founder-link"
+                      >LinkedIn
+                      <svg
+                        class="icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="m6 18 12-12M6 6h12v12" /></svg></span
+                  ></span> </a
+                ><a
+                  class="founder founder-yazdan"
+                  href="https://www.linkedin.com/in/yazdanzv/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span class="portrait-ring"
+                    ><span class="portrait-window"
+                      ><span class="portrait-source"
+                        ><img
+                          class="founder-image"
+                          src="/images/founders-studio-v2.webp"
+                          width="1536"
+                          height="1024"
+                          alt=""
+                          decoding="async"
+                          style="--panel: 2" /></span></span
+                  ></span>
+                  <span class="founder-caption"
+                    ><span class="founder-name">Yazdan Zandiyevakili</span
+                    ><span class="founder-role"
+                      >Researcher & software engineer</span
+                    ><span class="founder-degree"
+                      ><svg
+                        class="icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="m2 9 10-5 10 5-10 5L2 9Zm4 2v6c4 3 8 3 12 0v-6M22 9v7"
+                        /></svg
+                      ><span
+                        >Master’s · Data science<span class="school"
+                          >TU Wien</span
+                        ></span
+                      ></span
+                    ><span class="founder-city"
+                      ><svg
+                        class="icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M19 10c0 5-7 10-7 10S5 15 5 10a7 7 0 1 1 14 0Z"
+                        />
+                        <circle cx="12" cy="10" r="2" /></svg
+                      >Vienna, Austria</span
+                    ><span class="founder-link"
+                      >LinkedIn
+                      <svg
+                        class="icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="m6 18 12-12M6 6h12v12" /></svg></span
+                  ></span>
+                </a>
+                <div class="founder-f" aria-hidden="true">
+                  <svg viewBox="121 8.5 35 43" aria-hidden="true">
+                    <g fill="none" stroke="currentColor" stroke-width="5.6">
+                      <path
+                        class="f-stem"
+                        pathLength="1"
+                        d="M134 48V18q0-11 13-11h9"
+                      />
+                      <path class="f-bar" pathLength="1" d="M121 24.5h32" />
+                    </g>
+                  </svg>
+                </div>
+              </div>
             </div>
-            <p class="people-note">
-              Three founders. <br />Working alongside you.
-            </p>
           </div>
-          <a class="hero-next" href="#practice"
-            >See what that could look like
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path
-                d="M12 5v14m-6-6 6 6 6-6"
+          <div class="hero-baseline">
+            <a class="hero-next" href="#practice"
+              >See what that could look like
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
                 stroke="currentColor"
                 stroke-width="1.6"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-              /></svg
-          ></a>
+                aria-hidden="true"
+              >
+                <path d="M12 5v14m-6-6 6 6 6-6" /></svg></a
+            ><span class="contact-cue">Talk to us on LinkedIn</span>
+          </div>
         </section>
       </div>
-      <div class="work-ground">
-        <div class="page-width">
-          <section class="method" aria-labelledby="method-title">
-            <h2 id="method-title">Start with one useful workflow.</h2>
-            <p>
-              We find it with your team, build it into your existing tools, and
-              make sure people know how to use it.
-            </p>
-          </section>
-          <section
-            class="workflow"
-            id="practice"
-            aria-labelledby="workflow-title"
-          >
-            <div class="workflow-choose">
-              <h2 id="workflow-title">Where does work<br />get stuck?</h2>
-              <div
-                class="workflow-options"
-                role="group"
-                aria-label="Choose an everyday bottleneck"
-              >
-                <button
-                  type="button"
-                  data-workflow="answers"
-                  aria-pressed="true"
-                  aria-controls="workflow-result"
-                >
-                  Finding answers<svg
+      <section
+        class="work-chapter"
+        data-chapter="work"
+        id="practice"
+        aria-label="How we work"
+      >
+        <div class="work-content page-width">
+          <div class="work-motion">
+            <div class="method">
+              <h2 id="method-title">Start with one<br />useful workflow.</h2>
+              <ol class="method-steps">
+                <li>
+                  <svg
+                    class="icon"
                     viewBox="0 0 24 24"
                     fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                     aria-hidden="true"
                   >
-                    <path
-                      d="M5 12h14m-6-6 6 6-6 6"
-                      stroke="currentColor"
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-                <button
-                  type="button"
-                  data-workflow="followup"
-                  aria-pressed="false"
-                  aria-controls="workflow-result"
-                >
-                  Following up<svg
+                    <circle cx="10" cy="10" r="6" />
+                    <path d="m15 15 6 6M7 10h6m-3-3v6" /></svg
+                  ><span>Find it with<br />your team.</span>
+                </li>
+                <li>
+                  <svg
+                    class="icon"
                     viewBox="0 0 24 24"
                     fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                     aria-hidden="true"
                   >
+                    <rect x="3" y="3" width="6" height="6" rx="1.5" />
+                    <rect x="15" y="15" width="6" height="6" rx="1.5" />
                     <path
-                      d="M5 12h14m-6-6 6 6-6 6"
-                      stroke="currentColor"
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-                <button
-                  type="button"
-                  data-workflow="drafting"
-                  aria-pressed="false"
-                  aria-controls="workflow-result"
-                >
-                  Starting from scratch<svg
+                      d="M9 6h6a3 3 0 0 1 3 3v6M6 9v6a3 3 0 0 0 3 3h6"
+                    /></svg
+                  ><span>Build it into<br />your tools.</span>
+                </li>
+                <li>
+                  <svg
+                    class="icon"
                     viewBox="0 0 24 24"
                     fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                     aria-hidden="true"
                   >
+                    <circle cx="9" cy="8" r="3" />
                     <path
-                      d="M5 12h14m-6-6 6 6-6 6"
-                      stroke="currentColor"
-                      stroke-width="1.6"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-              </div>
+                      d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6m3 10v-3a6 6 0 0 0-2-4"
+                    /></svg
+                  ><span>Help people<br />make it a habit.</span>
+                </li>
+              </ol>
             </div>
             <div
-              class="workflow-result"
-              id="workflow-result"
-              aria-live="polite"
-              aria-atomic="true"
+              class="workflow"
+              role="region"
+              aria-labelledby="workflow-title"
             >
-              <p class="example-label">An illustrative workflow</p>
-              <h3>The answer is in a document. Somewhere.</h3>
-              <p class="workflow-explanation">
-                Ask a question. AI finds the relevant passages in your team's
-                documents and links to the sources.
-              </p>
-              <p class="human-step">
-                Your team checks the source and makes the call.
-              </p>
+              <div class="workflow-choose">
+                <h2 id="workflow-title">Where does work<br />get stuck?</h2>
+                <div
+                  class="workflow-options"
+                  role="group"
+                  aria-label="Choose an everyday bottleneck"
+                >
+                  <button
+                    type="button"
+                    data-workflow="answers"
+                    aria-pressed="true"
+                    aria-controls="workflow-result"
+                  >
+                    Finding answers<svg
+                      class="icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14m-6-6 6 6-6 6" />
+                    </svg></button
+                  ><button
+                    type="button"
+                    data-workflow="followup"
+                    aria-pressed="false"
+                    aria-controls="workflow-result"
+                  >
+                    Following up<svg
+                      class="icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14m-6-6 6 6-6 6" />
+                    </svg></button
+                  ><button
+                    type="button"
+                    data-workflow="drafting"
+                    aria-pressed="false"
+                    aria-controls="workflow-result"
+                  >
+                    Starting from scratch<svg
+                      class="icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14m-6-6 6 6-6 6" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="workflow-result"
+                id="workflow-result"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                <h3>The answer is in a document. Somewhere.</h3>
+                <ol class="workflow-flow">
+                  <li class="flow-step flow-ai">
+                    <span class="flow-node" aria-hidden="true"
+                      ><svg
+                        class="icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <rect x="3" y="3" width="6" height="6" rx="1.5" />
+                        <rect x="15" y="15" width="6" height="6" rx="1.5" />
+                        <path
+                          d="M9 6h6a3 3 0 0 1 3 3v6M6 9v6a3 3 0 0 0 3 3h6"
+                        /></svg
+                    ></span>
+                    <p class="flow-label">What AI does</p>
+                    <p class="workflow-explanation">
+                      Finds the relevant passages in your team's documents and
+                      links to the sources.
+                    </p>
+                  </li>
+                  <li class="flow-step flow-person">
+                    <span class="flow-node" aria-hidden="true"
+                      ><svg
+                        class="icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="m8 12 3 3 5-6" /></svg
+                    ></span>
+                    <p class="flow-label">Where a person decides</p>
+                    <p class="human-step">
+                      Your team checks the source and makes the call.
+                    </p>
+                  </li>
+                </ol>
+                <p class="example-label">
+                  An illustrative workflow, not a case study.
+                </p>
+              </div>
             </div>
-          </section>
-        </div>
-      </div>
-    </main>
-    <div class="work-ground">
-      <div class="page-width">
-        <footer
-          role="contentinfo"
-          class="contact"
-          id="contact"
-          aria-labelledby="contact-title"
-        >
-          <div class="contact-intro">
-            <h2 id="contact-title">Let's make it useful.</h2>
-            <p>
-              Tell us where work gets stuck.<br />Connect with any of us on
-              LinkedIn.
-            </p>
           </div>
-          <div
-            class="contact-links"
-            role="group"
-            aria-label="Talk to a co-founder on LinkedIn"
-          >
-            <a
-              href="https://www.linkedin.com/in/farzin-nasiri/"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><span>Farzin Nasiri</span
-              ><span class="profile-platform">LinkedIn</span
-              ><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="m6 18 12-12M6 6h12v12"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                /></svg
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/alireza-kebriaei/"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><span>Alireza Kebriaei</span
-              ><span class="profile-platform">LinkedIn</span
-              ><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="m6 18 12-12M6 6h12v12"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                /></svg
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/yazdanzv/"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><span>Yazdan</span><span class="profile-platform">LinkedIn</span
-              ><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d="m6 18 12-12M6 6h12v12"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                /></svg
-            ></a>
-          </div>
-          <div class="footer-line">
+          <div class="chapter-footer">
             <a href="#top" aria-label="Ooof Labs, back to top">Ooof Labs</a
+            ><a href="#founders">Talk to the founders</a
             ><span>AI in everyday work.</span>
           </div>
-        </footer>
-      </div>
-    </div>
+        </div>
+      </section>
+    </main>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

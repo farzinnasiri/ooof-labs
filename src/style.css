@@ -16,51 +16,94 @@
 }
 :root {
   font-family: "Instrument Sans Variable", sans-serif;
-  color: #203fe3;
-  background: #fff6df;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --blue: #203fe3;
-  --butter: #fff6df;
-  --coral: #ff806b;
-  --blue-ink: #273773;
-  --blue-muted: #485687;
-  --rule: #203fe32b;
+  --canvas: #edf1ef;
+  --surface: #f8faf8;
+  --ink: #153f42;
+  --muted: #536968;
+  --accent: #b24730;
+  --on-accent: #fff8ef;
+  --ring: #24575a;
+  --ring-alt: #b65a43;
+  --rule: #153f422b;
+  --example: #153f42;
+  --on-example: #eef4ef;
+  --example-muted: #bed0cb;
+  --human: #f0a67d;
+  --contact: #153638;
+  --on-contact: #eef4ef;
+  --contact-muted: #bfd0cc;
+  --contact-rule: #eef4ef30;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-move: cubic-bezier(0.77, 0, 0.175, 1);
+  --gutter: clamp(24px, 3.4vw, 64px);
+  --header-height: clamp(86px, 11svh, 112px);
+  color: var(--ink);
+  background: var(--canvas);
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --canvas: #11282b;
+  --surface: #173236;
+  --ink: #eef4ef;
+  --muted: #b1c7c1;
+  --accent: #f0a67d;
+  --on-accent: #172c2e;
+  --ring: #a5c4bd;
+  --ring-alt: #f0a67d;
+  --rule: #eef4ef2b;
+  --example: #1c3b3f;
+  --on-example: #eef4ef;
+  --example-muted: #bad0ca;
+  --human: #f0a67d;
+  --contact: #0c2023;
+  --on-contact: #eef4ef;
+  --contact-muted: #b1c7c1;
+  --contact-rule: #eef4ef30;
+  color-scheme: dark;
 }
 * {
   box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 28px;
-  scrollbar-color: #203fe3 #fff6df;
+  scroll-padding-top: 24px;
+  scrollbar-color: var(--muted) var(--canvas);
 }
 body {
   margin: 0;
+  width: 100%;
+  min-width: 320px;
+  background: var(--canvas);
 }
 a {
   color: inherit;
   text-decoration: none;
   text-underline-offset: 5px;
 }
-button {
+button,
+select {
   font: inherit;
+}
+button {
   cursor: pointer;
 }
 a,
-button {
+button,
+select {
   -webkit-tap-highlight-color: transparent;
 }
 a:focus-visible,
-button:focus-visible {
-  outline: 3px solid currentColor;
-  outline-offset: 6px;
+button:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 5px;
 }
 ::selection {
-  background: var(--coral);
-  color: #172052;
+  color: var(--on-accent);
+  background: var(--accent);
 }
 p,
 h1,
@@ -78,45 +121,67 @@ p {
 }
 svg {
   display: block;
-  width: 24px;
-  height: 24px;
   flex-shrink: 0;
+}
+svg.icon {
+  width: 22px;
+  height: 22px;
 }
 a:active,
 button:active {
-  opacity: 0.75;
+  opacity: 0.8;
 }
 .page-width {
-  width: min(100% - 100px, 1400px);
+  width: min(calc(100% - 2 * var(--gutter)), 1760px);
   margin-inline: auto;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 .skip-link {
   position: fixed;
-  z-index: 5;
+  z-index: 10;
   top: 12px;
   left: 12px;
-  padding: 15px 20px;
-  color: var(--blue);
-  background: var(--butter);
+  min-height: 48px;
+  padding: 14px 20px;
+  color: var(--on-accent);
+  background: var(--accent);
   transform: translateY(-160%);
 }
 .skip-link:focus {
   transform: none;
 }
+/* Full-bleed canvas; only the readable content has a width limit. */
 .hero-ground {
-  background: var(--blue);
-  color: var(--butter);
+  color: var(--ink);
+  background: var(--canvas);
 }
 .site-header {
-  display: flex;
+  height: var(--header-height);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 24px;
-  height: 106px;
+  gap: 28px;
 }
 .home {
   display: inline-flex;
+  justify-self: start;
   align-items: center;
-  min-height: 44px;
+  min-height: 48px;
+}
+.brand-lockup {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
 }
 .brand {
   display: flex;
@@ -124,617 +189,877 @@ button:active {
   gap: 9px;
 }
 .brand-mark {
-  width: 132px;
+  width: 125px;
   height: auto;
   overflow: visible;
 }
 .brand-labs {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.2;
-  letter-spacing: -0.03em;
   padding-bottom: 2px;
+  letter-spacing: -0.03em;
 }
 .header-note {
-  margin-left: auto;
-  margin-right: 11vw;
-  font-size: 13px;
+  font-size: 11px;
+  line-height: 1.2;
+  color: var(--muted);
+}
+.site-nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.site-nav a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
+}
+.header-actions {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-self: end;
 }
 .header-contact {
   display: flex;
   align-items: center;
-  gap: 17px;
-  border: 1px solid #fff6df6b;
-  border-radius: 30px;
-  padding: 0 19px;
+  gap: 15px;
   min-height: 44px;
+  border-bottom: 1px solid var(--ink);
   font-size: 14px;
 }
-.header-contact svg {
+.header-contact svg.icon {
   width: 19px;
   height: 19px;
 }
+.theme-control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+}
+.theme-control svg.icon {
+  width: 17px;
+  height: 17px;
+  pointer-events: none;
+}
+.theme-control select {
+  appearance: auto;
+  width: 70px;
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  padding: 0 2px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.theme-control option {
+  color: var(--ink);
+  background: var(--canvas);
+}
+/* Chapter one sizes from width and height; content may grow rather than clip. */
 .hero {
-  padding-top: 31px;
+  min-height: calc(100svh - var(--header-height));
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding-top: clamp(20px, 2.7svh, 34px);
 }
 .hero-opening {
   display: grid;
   grid-template-columns: 1.55fr 1fr;
-  gap: 7vw;
-  align-items: start;
+  gap: 6vw;
+  align-items: center;
 }
 h1 {
   font-family: "Bricolage Grotesque Variable", sans-serif;
-  font-weight: 650;
-  font-size: clamp(64px, 6.85vw, 98px);
+  font-size: clamp(58px, min(6.7vw, 9.7svh), 96px);
   line-height: 0.99;
+  font-weight: 650;
   letter-spacing: -0.04em;
 }
 .hero-intro {
-  max-width: 346px;
-  padding-top: 8px;
+  max-width: 350px;
   justify-self: end;
 }
 .hero-intro p {
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 .primary-action {
   display: inline-flex;
   align-items: center;
-  gap: 28px;
-  min-height: 52px;
-  margin-top: 25px;
-  padding: 0 24px;
-  border-radius: 30px;
-  color: var(--blue);
-  background: var(--butter);
-  font-weight: 600;
+  gap: 26px;
+  min-height: 50px;
+  margin-top: 22px;
+  padding: 0 23px;
+  border-radius: 28px;
+  color: var(--on-accent);
+  background: var(--accent);
   font-size: 15px;
-  transition: transform 180ms var(--ease);
+  font-weight: 600;
+  transition: transform 140ms var(--ease);
 }
-.primary-action svg {
+.primary-action .icon {
   width: 20px;
   height: 20px;
 }
 .hero-people {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 32px;
-  margin-top: 37px;
+  display: grid;
+  place-items: center;
+  padding: 8px 0 6px;
+  min-height: min-content;
+}
+.brand-stage {
+  --o-size: clamp(180px, calc(100svh - 600px), 400px);
+  width: min(100%, calc(var(--o-size) * 3.8));
+  margin-inline: auto;
 }
 .founders {
-  display: flex;
-  width: 76%;
-  max-width: 950px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) 0.8fr;
   align-items: start;
-  isolation: isolate;
+  gap: 0;
+  scroll-margin-top: 24px;
 }
 .founder {
   display: block;
   position: relative;
-  width: 36%;
-  flex-shrink: 0;
   min-width: 0;
 }
-.founder + .founder {
-  margin-left: -4%;
-}
+/* There is no second inner outline. One photo mask touches a solid fixed ring. */
 .portrait-ring {
-  display: block;
-  aspect-ratio: 1;
-  border: clamp(24px, 3.3vw, 48px) solid var(--coral);
-  border-radius: 46%;
-  background: var(--coral);
-  box-shadow:
-    0 14px 25px -17px #0919728c,
-    inset 0 2px 4px #ffb5a6;
-}
-.founder-ali {
-  z-index: 1;
-}
-.founder-yazdan {
-  z-index: 2;
-}
-.founder-ali .portrait-ring {
-  border-color: var(--butter);
-  background: var(--butter);
-  box-shadow:
-    0 14px 25px -17px #0919728c,
-    inset 0 2px 4px #ffffff;
-}
-.portrait-window {
+  position: relative;
   display: block;
   width: 100%;
   aspect-ratio: 1;
+  isolation: isolate;
   overflow: hidden;
-  position: relative;
-  border-radius: 43%;
-  background: #a69c8d;
+  background: var(--ring);
+  border-radius: 46%;
 }
-/* A frame is precisely one panel wide. The image remains upright at every width. */
-.founder-image {
-  display: block;
+.founder-ali .portrait-ring {
+  background: var(--ring-alt);
+}
+.portrait-window {
   position: absolute;
+  display: block;
+  inset: 13.5%;
+  overflow: hidden;
+  border-radius: 43%;
+  z-index: 1;
+  background: var(--ring);
+}
+.portrait-source {
+  position: absolute;
+  display: block;
+  inset: -1px;
+}
+.founder-image {
+  position: absolute;
+  display: block;
   max-width: none;
   width: 300%;
   height: 200%;
   left: calc(var(--panel) * -100%);
-  top: -5%;
+  top: -4%;
+  transform: none;
 }
 .founder-caption {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  min-height: 52px;
-  padding-inline: 7px;
-  font-size: 14px;
-  line-height: 1.25;
+  gap: 7px;
+  min-height: 156px;
+  padding: 13px 8px 12px;
   text-align: center;
+  line-height: 1.3;
 }
-.founder-caption svg {
-  width: 16px;
-  height: 16px;
+.founder-name {
+  font-size: 17px;
+  font-weight: 600;
 }
-.people-note {
-  font-size: 14px;
-  line-height: 1.55;
-  margin-bottom: 67px;
+.founder-role {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muted);
 }
-.hero-next {
+.founder-degree {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 5px;
+  max-width: 100%;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.founder-degree > .icon {
+  width: 15px;
+  height: 15px;
+  margin-top: 1px;
+}
+.school {
+  display: block;
+  font-size: 11px;
+  line-height: 1.4;
+}
+.founder-city {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+.founder-city .icon {
+  width: 13px;
+  height: 13px;
+}
+.founder-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 18px;
+  font-size: 11px;
+  color: var(--ink);
+}
+.founder-link .icon {
+  width: 13px;
+  height: 13px;
+}
+/* Exact user-authored SVG and draw, including its ascender and joining crossbar. */
+.founder-f {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  margin-left: -0.6%;
+  color: var(--ring);
+}
+.founder-f svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.hero-baseline {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  min-height: 66px;
-  margin-top: 20px;
-  border-top: 1px solid #fff6df4a;
-  font-size: 14px;
+  min-height: 54px;
+  border-top: 1px solid var(--rule);
+  padding: 3px 0 7px;
 }
-.hero-next svg {
-  width: 21px;
-  height: 21px;
+.hero-next {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 44px;
+  font-size: 13px;
 }
-.work-ground {
-  color: var(--blue);
-  background: var(--butter);
+.hero-next .icon {
+  width: 18px;
+  height: 18px;
+}
+.contact-cue {
+  font-size: 11px;
+  color: var(--muted);
+}
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+@keyframes connect {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .f-stem,
+  .f-bar {
+    stroke-dasharray: 1;
+    animation: draw 700ms var(--ease) both;
+  }
+  .f-stem {
+    animation-delay: 360ms;
+  }
+  .f-bar {
+    animation-delay: 620ms;
+  }
+  .is-switching .flow-ai:after {
+    animation: connect 350ms var(--ease);
+  }
+}
+/* Chapter two combines the user's method and AI/person example in one screen. */
+.work-chapter {
+  position: relative;
+  color: var(--ink);
+  background: var(--surface);
+  border-top: 2px solid var(--accent);
+  scroll-margin-top: 0;
+}
+.work-content {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  padding-top: clamp(30px, 4.7svh, 54px);
 }
 .method {
-  display: flex;
-  justify-content: space-between;
-  gap: 32px;
-  padding: 33px 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 5vw;
+  align-items: center;
+  padding: 48px 0 42px;
   border-bottom: 1px solid var(--rule);
 }
-.method h2 {
+.method h2,
+.workflow h2 {
   font-family: "Bricolage Grotesque Variable", sans-serif;
-  font-size: 26px;
-  line-height: 1.25;
-  font-weight: 550;
-  letter-spacing: -0.025em;
+  font-weight: 600;
+  font-size: clamp(34px, 3.2vw, 48px);
+  letter-spacing: -0.03em;
+  line-height: 1.06;
 }
-.method p {
-  max-width: 385px;
-  color: var(--blue-muted);
-  font-size: 15px;
-  line-height: 1.6;
+.method-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+.method-steps li {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.method-steps .icon {
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+}
+.method-steps li:not(:last-child):after {
+  content: "";
+  height: 1px;
+  background: var(--rule);
+  position: absolute;
+  top: 14px;
+  left: 45px;
+  right: 0;
 }
 .workflow {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 9vw;
-  padding: 42px 0 46px;
-}
-.workflow h2 {
-  font-family: "Bricolage Grotesque Variable", sans-serif;
-  font-size: 33px;
-  line-height: 1.07;
-  font-weight: 550;
-  letter-spacing: -0.025em;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 7vw;
+  padding: 48px 0 52px;
+  align-items: start;
 }
 .workflow-options {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  max-width: 370px;
-  margin-top: 21px;
+  gap: 8px;
+  max-width: 400px;
+  margin-top: 28px;
 }
 .workflow-options button {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  min-height: 44px;
-  padding: 8px 14px;
-  border: 0;
-  border-radius: 24px;
-  color: var(--blue-muted);
-  background: transparent;
+  min-height: 48px;
+  padding: 10px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 26px;
   text-align: left;
+  background: transparent;
+  color: var(--ink);
   font-size: 15px;
-  transition:
-    color 140ms ease-out,
-    background-color 140ms ease-out;
+  line-height: 1.35;
 }
-.workflow-options button svg {
+.workflow-options button .icon {
   width: 19px;
   height: 19px;
   opacity: 0;
 }
 .workflow-options button[aria-pressed="true"] {
-  background: var(--blue);
-  color: var(--butter);
+  color: var(--canvas);
+  background: var(--ink);
+  border-color: var(--ink);
 }
-.workflow-options button[aria-pressed="true"] svg {
+.workflow-options button[aria-pressed="true"] .icon {
   opacity: 1;
 }
 .workflow-result {
-  max-width: 470px;
-  padding-top: 2px;
-  color: var(--blue-ink);
-}
-.example-label {
-  font-size: 11px;
-  color: var(--blue-muted);
-  margin-bottom: 17px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 34px 25px;
+  min-height: 365px;
+  border-radius: 16px;
+  color: var(--on-example);
+  background: var(--example);
 }
 .workflow h3 {
   font-family: "Bricolage Grotesque Variable", sans-serif;
-  font-size: 32px;
+  font-size: clamp(28px, 2.6vw, 36px);
   font-weight: 550;
   line-height: 1.1;
   letter-spacing: -0.025em;
-  color: var(--blue);
-  margin-bottom: 16px;
-  max-width: 420px;
+  max-width: 19ch;
 }
-.workflow-explanation {
-  font-size: 16px;
-  line-height: 1.6;
-  max-width: 435px;
+.workflow-flow {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
 }
-.human-step {
-  margin-top: 18px;
-  font-size: 13px;
-  line-height: 1.6;
-}
-.contact {
+.flow-step {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 9vw;
-  padding: 35px 0 24px;
-  border-top: 1px solid var(--rule);
+  grid-template-columns: 27px minmax(0, 1fr);
+  column-gap: 16px;
+  position: relative;
 }
-.contact h2 {
-  font-family: "Bricolage Grotesque Variable", sans-serif;
-  font-size: 41px;
-  font-weight: 550;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+.flow-ai {
+  padding-bottom: 22px;
 }
-.contact-intro p {
-  color: var(--blue-muted);
-  font-size: 15px;
-  line-height: 1.6;
-  margin-top: 17px;
+.flow-ai:after {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 35px;
+  bottom: 7px;
+  width: 1px;
+  background: var(--example-muted);
+  transform-origin: top;
 }
-.contact-links {
-  max-width: 470px;
+.flow-node {
+  grid-row: 1 / span 2;
+  color: var(--example-muted);
 }
-.contact-links a {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  min-height: 49px;
-  border-bottom: 1px solid var(--rule);
-  font-size: 16px;
+.flow-node .icon {
+  width: 26px;
+  height: 26px;
 }
-.profile-platform {
-  margin-left: auto;
+.flow-person .flow-node {
+  color: var(--human);
+}
+.flow-label {
   font-size: 11px;
-  color: var(--blue-muted);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--example-muted);
+  margin: 1px 0 6px;
 }
-.contact-links svg {
-  width: 18px;
-  height: 18px;
+.flow-person .flow-label {
+  color: var(--human);
 }
-.footer-line {
-  grid-column: 1/-1;
+.workflow-explanation,
+.human-step {
+  font-size: 15px;
+  line-height: 1.55;
+}
+.example-label {
+  font-size: 11px;
+  color: var(--example-muted);
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.method {
+  padding: 0 0 clamp(24px, 4svh, 40px);
+}
+.method h2,
+.workflow h2 {
+  font-size: clamp(36px, 3.6vw, 56px);
+}
+.workflow {
+  flex: 1;
+  align-items: center;
+  padding: 24px 0 30px;
+}
+.workflow-result {
+  min-height: 390px;
+  padding: 34px 38px 28px;
+}
+.chapter-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  margin-top: 35px;
+  gap: 20px;
+  min-height: 58px;
+  margin-top: auto;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
   font-size: 11px;
-  color: var(--blue-muted);
 }
-.footer-line a {
+.chapter-footer a {
   display: flex;
   align-items: center;
   min-height: 44px;
 }
 @media (hover: hover) and (pointer: fine) {
+  .site-nav a:hover,
+  .header-contact:hover,
+  .founder:hover .founder-name,
+  .founder:hover .founder-link,
+  .chapter-footer a:hover {
+    text-decoration: underline;
+  }
   .primary-action:hover {
-    transform: translateY(-3px);
-  }
-  .header-contact:hover {
-    background: #fff6df12;
-  }
-  .founder:hover .founder-caption {
-    text-decoration: underline;
-  }
-  .contact-links a:hover > span:first-child {
-    text-decoration: underline;
+    transform: translateY(-2px);
   }
   .workflow-options button:not([aria-pressed="true"]):hover {
-    background: #203fe310;
-    color: var(--blue);
+    border-color: var(--ink);
   }
 }
-@media (min-width: 1600px) {
-  .hero-people {
-    margin-top: 40px;
+@media (max-width: 1100px) and (min-width: 701px) {
+  .site-header {
+    gap: 20px;
   }
-}
-@media (max-width: 1000px) {
-  .page-width {
-    width: calc(100% - 64px);
+  .header-actions {
+    gap: 16px;
   }
-  .header-note {
-    margin-right: 5vw;
-    font-size: 12px;
-  }
-  .hero-opening {
-    grid-template-columns: 1.5fr 1fr;
-    gap: 4vw;
-  }
-  h1 {
-    font-size: 7.7vw;
+  .site-nav {
+    gap: 20px;
   }
   .hero-intro p {
     font-size: 16px;
   }
-  .founders {
-    width: 78%;
+  .founder-name {
+    font-size: 15px;
   }
-  .people-note {
-    font-size: 12px;
+  .founder-degree {
+    font-size: 11px;
   }
-  .founder-caption {
-    font-size: 12px;
-    gap: 5px;
+  .school {
+    font-size: 11px;
   }
-  .method h2 {
-    max-width: 300px;
-    font-size: 24px;
+  .method {
+    gap: 4vw;
   }
-  .method p {
-    max-width: 320px;
+  .method-steps {
+    gap: 20px;
+  }
+  .method-steps li {
     font-size: 14px;
   }
   .workflow {
-    gap: 6vw;
+    gap: 5vw;
   }
-  .workflow h3 {
-    font-size: 29px;
-  }
-  .contact {
-    gap: 0 6vw;
-  }
-  .contact h2 {
-    font-size: 36px;
+  .workflow-result {
+    padding: 28px;
   }
 }
-@media (max-width: 680px) {
-  html {
-    scroll-padding-top: 22px;
-  }
-  .page-width {
-    width: calc(100% - 48px);
+@media (max-width: 700px) {
+  :root {
+    --gutter: 22px;
+    --header-height: 116px;
   }
   .site-header {
-    height: 90px;
-    gap: 12px;
+    height: var(--header-height);
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 70px 44px;
+    gap: 0 12px;
   }
   .brand-mark {
-    width: 103px;
-  }
-  .brand {
-    gap: 7px;
+    width: 98px;
   }
   .brand-labs {
     font-size: 14px;
-    padding-bottom: 1px;
+  }
+  .brand {
+    gap: 6px;
+  }
+  .brand-lockup {
+    gap: 6px;
   }
   .header-note {
-    display: none;
+    font-size: 11px;
+  }
+  .header-actions {
+    grid-column: 2;
+    grid-row: 1;
+    gap: 12px;
   }
   .header-contact {
-    margin-left: auto;
-    gap: 12px;
-    font-size: 12px;
-    padding-inline: 14px;
+    display: none;
   }
-  .header-contact svg {
-    width: 17px;
-    height: 17px;
+  .theme-control select {
+    font-size: 12px;
+    width: 64px;
+  }
+  .site-nav {
+    grid-column: 1/-1;
+    grid-row: 2;
+    gap: 24px;
+    justify-content: start;
+    border-top: 1px solid var(--rule);
+  }
+  .site-nav a {
+    font-size: 12px;
+    min-height: 44px;
   }
   .hero {
-    padding-top: 28px;
+    min-height: calc(100svh - var(--header-height));
+    padding-top: 22px;
   }
   .hero-opening {
     display: block;
   }
   h1 {
-    font-size: clamp(47px, 12.5vw, 80px);
-    line-height: 1.02;
+    font-size: clamp(45px, 12.8vw, 74px);
+    line-height: 1.01;
   }
   .hero-intro {
-    padding: 0;
-    margin-top: 24px;
-    max-width: 340px;
+    max-width: 360px;
+    margin-top: 20px;
   }
   .hero-intro p {
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.55;
   }
   .primary-action {
     min-height: 48px;
+    margin-top: 18px;
     font-size: 14px;
     padding-inline: 21px;
-    margin-top: 22px;
-    gap: 26px;
+    gap: 24px;
   }
   .hero-people {
-    display: block;
-    margin-top: 36px;
+    padding: 26px 0 12px;
   }
-  .founders {
+  .brand-stage {
     width: 100%;
-    max-width: 480px;
-  }
-  .founder {
-    width: 36%;
-  }
-  .founder + .founder {
-    margin-left: -4%;
-  }
-  .portrait-ring {
-    border-width: clamp(12px, 3.5vw, 22px);
-    border-radius: 45%;
-  }
-  .portrait-window {
-    border-radius: 41%;
+    max-width: 520px;
   }
   .founder-caption {
-    min-height: 55px;
+    min-height: 0;
+    padding: 12px 3px 14px;
+    gap: 7px;
+  }
+  .founder-name {
+    font-size: 12px;
+    line-height: 1.3;
+    min-height: 31px;
+    max-width: 100%;
+  }
+  .founder-role {
     font-size: 11px;
-    padding-inline: 7px;
+    line-height: 1.4;
+  }
+  .founder-degree {
+    display: block;
+    font-size: 11px;
+    line-height: 1.4;
+    max-width: 100%;
+  }
+  .founder-degree > .icon {
+    width: 16px;
+    height: 16px;
+    margin: 1px auto 5px;
+  }
+  .school {
+    font-size: 11px;
+    line-height: 1.4;
+    margin-top: 3px;
+  }
+  .founder-city {
+    font-size: 11px;
+    gap: 3px;
+    white-space: nowrap;
+  }
+  .founder-city .icon {
+    width: 11px;
+    height: 11px;
+  }
+  .founder-link {
+    font-size: 11px;
     gap: 4px;
   }
-  .founder-caption svg {
-    width: 13px;
-    height: 13px;
+  .founder-link .icon {
+    width: 12px;
+    height: 12px;
   }
-  .people-note {
-    font-size: 12px;
-    margin: 13px 0 0;
-    line-height: 1.5;
-  }
-  .people-note br {
-    display: none;
-  }
-  .people-note br:after {
-    content: " ";
+  .hero-baseline {
+    gap: 12px;
+    min-height: 55px;
   }
   .hero-next {
-    min-height: 58px;
-    margin-top: 24px;
-    font-size: 12px;
+    font-size: 11px;
+    gap: 7px;
   }
-  .hero-next svg {
-    width: 20px;
-    height: 20px;
+  .hero-next .icon {
+    width: 16px;
+    height: 16px;
+  }
+  .contact-cue {
+    font-size: 11px;
+    max-width: 95px;
+    text-align: right;
+  }
+  .work-content {
+    min-height: 100svh;
+    padding-top: 32px;
   }
   .method {
     display: block;
-    padding: 27px 0 28px;
+    padding: 0 0 28px;
   }
-  .method h2 {
-    max-width: none;
-    font-size: 24px;
-    max-width: 300px;
+  .method h2,
+  .workflow h2 {
+    font-size: 34px;
   }
-  .method p {
-    max-width: 345px;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-top: 13px;
+  .method-steps {
+    margin-top: 25px;
+    gap: 18px;
+  }
+  .method-steps li {
+    font-size: 12px;
+    gap: 12px;
+    line-height: 1.4;
+  }
+  .method-steps .icon {
+    width: 25px;
+    height: 25px;
+  }
+  .method-steps li:not(:last-child):after {
+    left: 37px;
+    top: 13px;
   }
   .workflow {
     display: block;
-    padding: 31px 0 35px;
-  }
-  .workflow h2 {
-    font-size: 30px;
+    padding: 28px 0 32px;
   }
   .workflow-options {
-    flex-direction: row;
-    gap: 6px;
+    margin-top: 22px;
+    gap: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     max-width: none;
-    margin-top: 21px;
   }
   .workflow-options button {
-    flex: 1;
-    min-width: 0;
-    min-height: 52px;
-    padding: 9px 10px;
-    border: 1px solid var(--rule);
-    font-size: 12px;
-    line-height: 1.3;
+    min-height: 48px;
+    padding: 10px 14px;
+    font-size: 13px;
+    border-radius: 25px;
   }
-  .workflow-options button[aria-pressed="true"] {
-    border-color: var(--blue);
+  .workflow-options button:last-child {
+    grid-column: 1/-1;
   }
-  .workflow-options button svg {
-    display: none;
+  .workflow-options button .icon {
+    width: 17px;
+    height: 17px;
   }
   .workflow-result {
-    margin-top: 28px;
-    min-height: 247px;
-    padding: 0;
-  }
-  .example-label {
-    font-size: 10px;
-    margin-bottom: 15px;
+    margin-top: 24px;
+    padding: 25px 24px 23px;
+    min-height: 368px;
   }
   .workflow h3 {
-    font-size: 28px;
-    line-height: 1.12;
-    max-width: 330px;
-    margin-bottom: 15px;
+    font-size: 29px;
+    line-height: 1.08;
   }
-  .workflow-explanation {
-    font-size: 15px;
-    line-height: 1.6;
+  .workflow-flow {
+    margin-top: 24px;
   }
+  .flow-step {
+    column-gap: 13px;
+  }
+  .workflow-explanation,
   .human-step {
-    font-size: 13px;
-    line-height: 1.6;
-    margin-top: 18px;
-  }
-  .contact {
-    display: block;
-    padding: 30px 0 17px;
-  }
-  .contact h2 {
-    font-size: 34px;
-  }
-  .contact-intro p {
     font-size: 14px;
-    margin-top: 15px;
+    line-height: 1.55;
   }
-  .contact-links {
-    margin-top: 23px;
+  .flow-label {
+    font-size: 11px;
   }
-  .contact-links a {
-    min-height: 52px;
-    font-size: 16px;
+  .example-label {
+    font-size: 11px;
+    padding-top: 21px;
   }
-  .footer-line {
-    margin-top: 29px;
-    font-size: 10px;
+  .chapter-footer {
+    min-height: 58px;
+    font-size: 11px;
+    gap: 12px;
+  }
+  .chapter-footer > span {
+    display: none;
+  }
+}
+@media (max-width: 365px) {
+  .founder-name {
+    font-size: 11.5px;
+  }
+  .founder-city {
+    font-size: 11px;
+  }
+  .founder-caption {
+    padding-inline: 2px;
+  }
+  .founder-role,
+  .founder-degree {
+    font-size: 11px;
+  }
+  .school {
+    font-size: 11px;
+  }
+  .hero-next {
+    font-size: 11px;
+  }
+  .workflow-options {
+    grid-template-columns: 1fr;
+  }
+  .workflow-options button:last-child {
+    grid-column: auto;
+  }
+  .workflow-result {
+    min-height: 389px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  *,
-  *:before,
-  *:after {
-    transition: none !important;
-    animation: none !important;
+  .f-stem,
+  .f-bar {
+    animation: none;
+    stroke-dashoffset: 0;
   }
+  .primary-action {
+    transition: none;
+  }
+  .is-switching .flow-ai:after {
+    animation: none;
+  }
+}
+@media (forced-colors: active) {
+  .portrait-ring,
+  .primary-action,
+  .workflow-options button[aria-pressed="true"] {
+    border: 2px solid ButtonText;
+  }
+  .workflow-result {
+    border: 1px solid CanvasText;
+  }
+  .flow-ai:after {
+    background: CanvasText;
+  }
+}
+
+.work-motion {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }

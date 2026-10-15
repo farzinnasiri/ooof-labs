@@ -1,39 +1,23 @@
 # Ooof Labs direction
 
-## Selected world
+## Current refinement
 
-Good Chemistry was selected by the parent after inspecting all three directions at desktop and mobile widths. It treats Ooof Labs as three people bringing practical AI into everyday work. The name's three o forms become a connected founder portrait composition.
+The user revised the initial site locally and requested a calmer palette, day/night themes based on local time, a recognizable OOOF row, corrected portrait direction, useful graphics, and full founder credentials. The parent selected mineral/petrol/copper for light and deep petrol/mist/apricot for dark. This is a refinement of the local work, not another identity tournament.
 
-Electric cobalt, butter type, and coral/butter frames make the hero confident and human. The pale butter lower section gives the reader relief and keeps the method and contact easy to read. Every founder stays upright inside an isolated third of the approved triptych.
-
-## Alternatives considered
-
-- Open studio used a light architectural/gallery composition, deep blue Instrument Sans, and a restrained portrait hanging. It was quieter than the selected identity.
-- After hours used a warm dark editorial composition, Fraunces, amber actions, and intimate photographic fields. It was less playful than the selected identity.
-
-The original rendered alternatives remain in docs/exploration and are excluded from the production build.
+Preserved from the user's changes: the large f completing the founder wordmark, three-step method, AI/person split, connector response, hero contact links and founder frames. Oversized spacing is tightened so the site remains a compact landing page.
 
 ## Voice and content
 
-The founders speaking directly to a business leader. Name work people recognize. Use short sentences. Make no performance claim without evidence.
+The founders speaking directly to a business leader. “AI belongs in the everyday.” Explain becoming AI native with ordinary work, then let the visitor choose an illustrative example. No fabricated case studies or results. Real names, concise roles, education and cities support the contact choice.
 
-The hero says “AI belongs in the everyday.” Its support explicitly says “We help companies become AI native. We work with your team to build useful AI into the way your business runs.”
+Full names are Farzin Nasiri, Alireza Kebriaei, and Yazdan Zandiyevakili. Farzin's completed qualification is described as MSc · Statistical Learning and Politecnico di Milano graduate. Yazdan's visible TU Wien qualification reads Master’s · Data science at the user's request, without a completion claim. Ali has no degree claim.
 
-One method line leads into three selectable bottlenecks: finding answers, following up, and starting from scratch. Each illustrative workflow explains what AI does and where a person decides. Contact uses the three real LinkedIn profiles. No invented surname for Yazdan, biographies, credentials, client logos, case studies, statistics, or email address.
+## Visual and motion decisions
 
-## Signature interaction
+Keep Bricolage and Instrument, the custom three-o mark and f, and a single matching portrait set. The exact original two-stroke f draws once in 1320ms. Two screen-sized chapters connect through at most 16px of direct native-scroll movement. Photographs and their fixed masks move together as one stage; faces never rotate or wobble. Reduced motion shows the settled composition; the finite draw pauses offscreen or hidden. No ongoing idle motion or pause control. Light and dark are both designed palettes; Auto uses local clock boundaries, not system appearance.
 
-Choose an everyday bottleneck. The selected control changes to blue with butter text and the example updates immediately. An ARIA live region announces the change. Text stays at full opacity. Reduced motion removes smooth scrolling and control transitions; keyboard focus remains visible.
+Authored location, qualification, software/research and workflow icons carry facts or explain a transition. The small method is a connected sequence, and the workflow preserves explicit AI and human approval labels. No unrelated icon grid.
 
-## Tokens and composition
+## Historical exploration
 
-- Cobalt #203fe3, butter #fff6df, coral #ff806b.
-- Lower text #273773, secondary text #485687.
-- Bricolage Grotesque display, Instrument Sans body and controls. Self-hosted variable fonts.
-- Headline up to 98px desktop and about 49px at 390px mobile; body 15–18px.
-- Tracking no tighter than -0.04em. Desktop margins 50px, mobile margins 24px.
-- One hero, one method line, illustrative workflow selector, direct contact. No repeated photography.
-
-## Imagery and provenance
-
-The approved AI-assisted portrait triptych uses one light, distance, wardrobe, and grade. Left Farzin Nasiri, middle Alireza Kebriaei, right Yazdan. The user confirmed the mapping. CSS isolates each panel without changing the faces. Public WebP provenance and the full generation prompt are preserved in PORTRAITS.md and the asset sidecar. The PNG master stays locally in ignored assets/source.
+The first round rendered Open studio, After hours, and Good Chemistry. The parent selected Good Chemistry, then the user supplied the local refinements described above. Original alternatives remain under docs/exploration and do not enter production. CRITIQUE.md records the original review separately from the parent’s current SHIP review.

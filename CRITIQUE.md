@@ -1,4 +1,4 @@
-# Parent product review
+# Original release: parent product review
 
 Disposition: ship. The parent GPT-6-Astra reviewed the rendered product and browser behavior, not the source code. This records that review; it is not an independent new critic pass.
 
@@ -19,3 +19,14 @@ The light gallery direction lost for its familiar consultancy composition. The d
 ## Release check
 
 The implementation worker verifies production HTTP responses, assets, metadata, deployment state, and GitHub main integration. The parent owns final live product/browser confirmation. No additional design changes are required for release.
+
+
+# Current revision: parent product review
+
+Disposition: SHIP. This records the parent’s product review on 2026-10-15, not a source review or a new independent critic pass. The independent baseline and focused motion audits informed the implementation.
+
+The parent reviewed current desktop and mobile renders, both-theme final captures, DPR 2 portrait edges, and the draw/scroll motion strip. The original two-stroke f and its finite draw are restored. The portrait/frame edge is flush in the reviewed captures. Both themes fit the two-chapter composition; credentials, cities, full names and real LinkedIn links appear in the hero. No pause button or duplicate founder section remains. Earlier captures with the misplaced Ali frame were excluded from this verdict.
+
+No material visual defects remained in the reviewed scope. The final user wording preference shortens Yazdan’s caption to “Master’s · Data science”, retaining TU Wien and making no graduation claim. No other product changes were requested. Physical-device and Safari motion feel were not tested.
+
+The implementation worker owns technical checks and exact-commit deployment verification. The parent will verify the live product.
