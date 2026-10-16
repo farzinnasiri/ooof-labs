@@ -8,7 +8,7 @@ Preserved from the user's changes: the large f completing the founder wordmark, 
 
 ## Voice and content
 
-The founders speaking directly to a business leader. “AI belongs in the everyday.” Explain becoming AI native with ordinary work, then let the visitor choose an illustrative example. No fabricated case studies or results. Real names, concise roles, education and cities support the contact choice.
+The founders speaking directly to a business leader. “AI does the work. We know where it breaks.” Agents do the work now, so the page sells judgment, not headcount: picking the right thing to build, catching what AI gets wrong, shipping past the demo. Each idea appears once. The visitor then gives an agent an ordinary job and sees where it slips, as an illustration. Plain words, short sentences, no slogans that restate the headline. No fabricated case studies or results. Real names, concise roles, education and cities support the contact choice.
 
 Full names are Farzin Nasiri, Alireza Kebriaei, and Yazdan Zandiyevakili. Farzin's completed qualification is described as MSc · Statistical Learning and Politecnico di Milano graduate. Yazdan's visible TU Wien qualification reads Master’s · Data science at the user's request, without a completion claim. Ali has no degree claim.
 

@@ -12,11 +12,11 @@ Delegated in the brief. Static HTML/CSS and a small JavaScript workflow selector
 
 ## Users
 
-Business leaders who want their company to adopt AI in practical, everyday work.
+Business leaders who want to ship AI that works in their company and are deciding whether to hire a consultancy, build in-house, or let agents do it.
 
 ## Product purpose
 
-Explain how Ooof Labs helps companies go AI native, introduce its three founders, and help a visitor start a conversation.
+Say what a consultancy is for now that AI agents do the work: not headcount, but judgment about what to build, where AI fails, and how to ship it. Introduce the three founders and help a visitor start a conversation.
 
 ## Capabilities and constraints
 

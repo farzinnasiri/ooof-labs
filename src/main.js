@@ -2,22 +2,22 @@ import { initBrandMotion } from "./brand-motion.js";
 
 const workflows = {
   answers: {
-    title: "The answer is in a document. Somewhere.",
-    explanation:
-      "Finds the relevant passages in your team's documents and links to the sources.",
-    human: "Your team checks the source and makes the call.",
+    title: "“Which version of the policy is current?”",
+    explanation: "Searches your documents and answers in seconds.",
+    human:
+      "Two versions exist. It quotes the old one, sounding sure. We make it show its source and admit when it doesn't know.",
   },
   followup: {
-    title: "The meeting ends. The follow-up starts.",
-    explanation:
-      "Turns meeting notes into a draft recap and next steps, ready for your existing tools.",
-    human: "A person reviews the draft before anything is sent.",
+    title: "“Send everyone the recap.”",
+    explanation: "Turns the meeting notes into a recap and next steps.",
+    human:
+      "It gives a task to the wrong person, or invents a deadline nobody said. We check every owner and date against the notes.",
   },
   drafting: {
-    title: "Another proposal. Another blank page.",
-    explanation:
-      "Builds a first draft from the brief and approved past work, with missing details flagged.",
-    human: "Your team shapes the argument and approves the result.",
+    title: "“Draft the proposal by Friday.”",
+    explanation: "Writes a first draft from the brief and your past work.",
+    human:
+      "It borrows a price from an old client's proposal. We keep it to approved material and flag what's missing.",
   },
 };
 

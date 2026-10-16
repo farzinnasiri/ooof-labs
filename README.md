@@ -1,6 +1,6 @@
 # Ooof Labs
 
-A compact consultancy site for companies becoming AI native. Static HTML and CSS, with a small JavaScript workflow selector. Built with Vite. No analytics, cookies, form backend, or external font/image requests.
+A compact consultancy site for companies that want to ship AI that holds up. Static HTML and CSS, with a small JavaScript workflow selector. Built with Vite. No analytics, cookies, form backend, or external font/image requests.
 
 ## Local development
 
