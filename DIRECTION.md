@@ -14,7 +14,7 @@ Full names are Farzin Nasiri, Alireza Kebriaei, and Yazdan Zandiyevakili. Farzin
 
 ## Visual and motion decisions
 
-Keep Bricolage and Instrument, the custom three-o mark and f, and a single matching portrait set. The exact original two-stroke f draws once in 1320ms. Two screen-sized chapters connect through at most 16px of direct native-scroll movement. Photographs and their fixed masks move together as one stage; faces never rotate or wobble. Reduced motion shows the settled composition; the finite draw pauses offscreen or hidden. No ongoing idle motion or pause control. Light and dark are both designed palettes; Auto uses local clock boundaries, not system appearance.
+Keep Bricolage and Instrument, the three-o wordmark and f, and the confirmed portrait set. The October 16 identity work makes the logo a portable vector system and gives the large hero a finite assembly sequence: O frames settle, portraits open, and the f draws. After the entrance, a slow highlight travels around the O contours and connects to the f. A compact pause control sits beside the theme selector; there is no replay button. Pointer and keyboard responses move each complete frame and portrait uniformly. Native scrolling connects the chapters without pinning or intercepting input. Reduced motion shows the settled composition. The exact proportions and current motion timings live in DESIGN.md and public/brand/README.md. Light and dark remain designed palettes; Auto uses local clock boundaries, not system appearance.
 
 Authored location, qualification, software/research and workflow icons carry facts or explain a transition. The small method is a connected sequence, and the workflow preserves explicit AI and human approval labels. No unrelated icon grid.
 

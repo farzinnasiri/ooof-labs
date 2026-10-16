@@ -7,14 +7,16 @@
     "dev": "vite --host 0.0.0.0 --port 5173",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0 --port 4173",
-    "check": "node --check src/main.js && node --check public/theme.js && node --check vite.config.js",
+    "check": "node --check src/main.js && node --check src/brand-motion.js && node --check public/theme.js && node --check scripts/export-brand.mjs && node --check vite.config.js",
     "lint": "prettier --check index.html src public/theme.js tests vite.config.js vercel.json package.json",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "brand": "node scripts/export-brand.mjs"
   },
   "devDependencies": {
     "@fontsource-variable/bricolage-grotesque": "^5.2.10",
     "@fontsource-variable/fraunces": "^5.2.9",
     "@fontsource-variable/instrument-sans": "^5.2.8",
+    "@resvg/resvg-js": "^2.6.2",
     "prettier": "3.6.2",
     "vite": "^7.3.1"
   },

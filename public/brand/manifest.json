@@ -1,0 +1,587 @@
+{
+  "version": 1,
+  "lettering": "Custom Ooof lettering; labs: Instrument Sans Medium 500, outlined",
+  "assets": [
+    {
+      "name": "ooof-wordmark-petrol",
+      "svg": "svg/ooof-wordmark-petrol.svg",
+      "png": [
+        {
+          "file": "png/ooof-wordmark-petrol-256.png",
+          "width": 256,
+          "height": 98
+        },
+        {
+          "file": "png/ooof-wordmark-petrol-512.png",
+          "width": 512,
+          "height": 197
+        },
+        {
+          "file": "png/ooof-wordmark-petrol-1024.png",
+          "width": 1024,
+          "height": 394
+        },
+        {
+          "file": "png/ooof-wordmark-petrol-2048.png",
+          "width": 2048,
+          "height": 787
+        }
+      ],
+      "usage": "Standalone wordmark. Transparent, clear space included."
+    },
+    {
+      "name": "ooof-labs-petrol",
+      "svg": "svg/ooof-labs-petrol.svg",
+      "png": [
+        {
+          "file": "png/ooof-labs-petrol-256.png",
+          "width": 256,
+          "height": 77
+        },
+        {
+          "file": "png/ooof-labs-petrol-512.png",
+          "width": 512,
+          "height": 155
+        },
+        {
+          "file": "png/ooof-labs-petrol-1024.png",
+          "width": 1024,
+          "height": 309
+        },
+        {
+          "file": "png/ooof-labs-petrol-2048.png",
+          "width": 2048,
+          "height": 618
+        }
+      ],
+      "usage": "Primary identity. All lettering outlined; no fonts needed."
+    },
+    {
+      "name": "ooof-icon-petrol",
+      "svg": "svg/ooof-icon-petrol.svg",
+      "png": [
+        {
+          "file": "png/ooof-icon-petrol-32.png",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "file": "png/ooof-icon-petrol-64.png",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "file": "png/ooof-icon-petrol-128.png",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "file": "png/ooof-icon-petrol-256.png",
+          "width": 256,
+          "height": 256
+        },
+        {
+          "file": "png/ooof-icon-petrol-512.png",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "file": "png/ooof-icon-petrol-1024.png",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "usage": "Compact of monogram. Transparent square; for constrained app attribution."
+    },
+    {
+      "name": "ooof-wordmark-white",
+      "svg": "svg/ooof-wordmark-white.svg",
+      "png": [
+        {
+          "file": "png/ooof-wordmark-white-256.png",
+          "width": 256,
+          "height": 98
+        },
+        {
+          "file": "png/ooof-wordmark-white-512.png",
+          "width": 512,
+          "height": 197
+        },
+        {
+          "file": "png/ooof-wordmark-white-1024.png",
+          "width": 1024,
+          "height": 394
+        },
+        {
+          "file": "png/ooof-wordmark-white-2048.png",
+          "width": 2048,
+          "height": 787
+        }
+      ],
+      "usage": "Standalone wordmark. Transparent, clear space included."
+    },
+    {
+      "name": "ooof-labs-white",
+      "svg": "svg/ooof-labs-white.svg",
+      "png": [
+        {
+          "file": "png/ooof-labs-white-256.png",
+          "width": 256,
+          "height": 77
+        },
+        {
+          "file": "png/ooof-labs-white-512.png",
+          "width": 512,
+          "height": 155
+        },
+        {
+          "file": "png/ooof-labs-white-1024.png",
+          "width": 1024,
+          "height": 309
+        },
+        {
+          "file": "png/ooof-labs-white-2048.png",
+          "width": 2048,
+          "height": 618
+        }
+      ],
+      "usage": "Primary identity. All lettering outlined; no fonts needed."
+    },
+    {
+      "name": "ooof-icon-white",
+      "svg": "svg/ooof-icon-white.svg",
+      "png": [
+        {
+          "file": "png/ooof-icon-white-32.png",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "file": "png/ooof-icon-white-64.png",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "file": "png/ooof-icon-white-128.png",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "file": "png/ooof-icon-white-256.png",
+          "width": 256,
+          "height": 256
+        },
+        {
+          "file": "png/ooof-icon-white-512.png",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "file": "png/ooof-icon-white-1024.png",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "usage": "Compact of monogram. Transparent square; for constrained app attribution."
+    },
+    {
+      "name": "ooof-wordmark-black",
+      "svg": "svg/ooof-wordmark-black.svg",
+      "png": [
+        {
+          "file": "png/ooof-wordmark-black-256.png",
+          "width": 256,
+          "height": 98
+        },
+        {
+          "file": "png/ooof-wordmark-black-512.png",
+          "width": 512,
+          "height": 197
+        },
+        {
+          "file": "png/ooof-wordmark-black-1024.png",
+          "width": 1024,
+          "height": 394
+        },
+        {
+          "file": "png/ooof-wordmark-black-2048.png",
+          "width": 2048,
+          "height": 787
+        }
+      ],
+      "usage": "Standalone wordmark. Transparent, clear space included."
+    },
+    {
+      "name": "ooof-labs-black",
+      "svg": "svg/ooof-labs-black.svg",
+      "png": [
+        {
+          "file": "png/ooof-labs-black-256.png",
+          "width": 256,
+          "height": 77
+        },
+        {
+          "file": "png/ooof-labs-black-512.png",
+          "width": 512,
+          "height": 155
+        },
+        {
+          "file": "png/ooof-labs-black-1024.png",
+          "width": 1024,
+          "height": 309
+        },
+        {
+          "file": "png/ooof-labs-black-2048.png",
+          "width": 2048,
+          "height": 618
+        }
+      ],
+      "usage": "Primary identity. All lettering outlined; no fonts needed."
+    },
+    {
+      "name": "ooof-icon-black",
+      "svg": "svg/ooof-icon-black.svg",
+      "png": [
+        {
+          "file": "png/ooof-icon-black-32.png",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "file": "png/ooof-icon-black-64.png",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "file": "png/ooof-icon-black-128.png",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "file": "png/ooof-icon-black-256.png",
+          "width": 256,
+          "height": 256
+        },
+        {
+          "file": "png/ooof-icon-black-512.png",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "file": "png/ooof-icon-black-1024.png",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "usage": "Compact of monogram. Transparent square; for constrained app attribution."
+    },
+    {
+      "name": "ooof-wordmark-colour",
+      "svg": "svg/ooof-wordmark-colour.svg",
+      "png": [
+        {
+          "file": "png/ooof-wordmark-colour-256.png",
+          "width": 256,
+          "height": 98
+        },
+        {
+          "file": "png/ooof-wordmark-colour-512.png",
+          "width": 512,
+          "height": 197
+        },
+        {
+          "file": "png/ooof-wordmark-colour-1024.png",
+          "width": 1024,
+          "height": 394
+        },
+        {
+          "file": "png/ooof-wordmark-colour-2048.png",
+          "width": 2048,
+          "height": 787
+        }
+      ],
+      "usage": "Standalone wordmark. Transparent, clear space included."
+    },
+    {
+      "name": "ooof-labs-colour",
+      "svg": "svg/ooof-labs-colour.svg",
+      "png": [
+        {
+          "file": "png/ooof-labs-colour-256.png",
+          "width": 256,
+          "height": 77
+        },
+        {
+          "file": "png/ooof-labs-colour-512.png",
+          "width": 512,
+          "height": 155
+        },
+        {
+          "file": "png/ooof-labs-colour-1024.png",
+          "width": 1024,
+          "height": 309
+        },
+        {
+          "file": "png/ooof-labs-colour-2048.png",
+          "width": 2048,
+          "height": 618
+        }
+      ],
+      "usage": "Primary identity. All lettering outlined; no fonts needed."
+    },
+    {
+      "name": "ooof-icon-colour",
+      "svg": "svg/ooof-icon-colour.svg",
+      "png": [
+        {
+          "file": "png/ooof-icon-colour-32.png",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "file": "png/ooof-icon-colour-64.png",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "file": "png/ooof-icon-colour-128.png",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "file": "png/ooof-icon-colour-256.png",
+          "width": 256,
+          "height": 256
+        },
+        {
+          "file": "png/ooof-icon-colour-512.png",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "file": "png/ooof-icon-colour-1024.png",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "usage": "Compact of monogram. Transparent square; for constrained app attribution."
+    },
+    {
+      "name": "ooof-wordmark-night",
+      "svg": "svg/ooof-wordmark-night.svg",
+      "png": [
+        {
+          "file": "png/ooof-wordmark-night-256.png",
+          "width": 256,
+          "height": 98
+        },
+        {
+          "file": "png/ooof-wordmark-night-512.png",
+          "width": 512,
+          "height": 197
+        },
+        {
+          "file": "png/ooof-wordmark-night-1024.png",
+          "width": 1024,
+          "height": 394
+        },
+        {
+          "file": "png/ooof-wordmark-night-2048.png",
+          "width": 2048,
+          "height": 787
+        }
+      ],
+      "usage": "Standalone wordmark. Transparent, clear space included."
+    },
+    {
+      "name": "ooof-labs-night",
+      "svg": "svg/ooof-labs-night.svg",
+      "png": [
+        {
+          "file": "png/ooof-labs-night-256.png",
+          "width": 256,
+          "height": 77
+        },
+        {
+          "file": "png/ooof-labs-night-512.png",
+          "width": 512,
+          "height": 155
+        },
+        {
+          "file": "png/ooof-labs-night-1024.png",
+          "width": 1024,
+          "height": 309
+        },
+        {
+          "file": "png/ooof-labs-night-2048.png",
+          "width": 2048,
+          "height": 618
+        }
+      ],
+      "usage": "Primary identity. All lettering outlined; no fonts needed."
+    },
+    {
+      "name": "ooof-icon-night",
+      "svg": "svg/ooof-icon-night.svg",
+      "png": [
+        {
+          "file": "png/ooof-icon-night-32.png",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "file": "png/ooof-icon-night-64.png",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "file": "png/ooof-icon-night-128.png",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "file": "png/ooof-icon-night-256.png",
+          "width": 256,
+          "height": 256
+        },
+        {
+          "file": "png/ooof-icon-night-512.png",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "file": "png/ooof-icon-night-1024.png",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "usage": "Compact of monogram. Transparent square; for constrained app attribution."
+    },
+    {
+      "name": "ooof-app-petrol",
+      "svg": "svg/ooof-app-petrol.svg",
+      "png": [
+        {
+          "file": "png/ooof-app-petrol-16.png",
+          "width": 16,
+          "height": 16
+        },
+        {
+          "file": "png/ooof-app-petrol-32.png",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "file": "png/ooof-app-petrol-48.png",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "file": "png/ooof-app-petrol-180.png",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "file": "png/ooof-app-petrol-192.png",
+          "width": 192,
+          "height": 192
+        },
+        {
+          "file": "png/ooof-app-petrol-512.png",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "file": "png/ooof-app-petrol-1024.png",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "usage": "Opaque square app icon. Platform applies its own corner mask."
+    },
+    {
+      "name": "ooof-app-mineral",
+      "svg": "svg/ooof-app-mineral.svg",
+      "png": [
+        {
+          "file": "png/ooof-app-mineral-16.png",
+          "width": 16,
+          "height": 16
+        },
+        {
+          "file": "png/ooof-app-mineral-32.png",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "file": "png/ooof-app-mineral-48.png",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "file": "png/ooof-app-mineral-180.png",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "file": "png/ooof-app-mineral-192.png",
+          "width": 192,
+          "height": 192
+        },
+        {
+          "file": "png/ooof-app-mineral-512.png",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "file": "png/ooof-app-mineral-1024.png",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "usage": "Opaque square app icon. Platform applies its own corner mask."
+    },
+    {
+      "name": "ooof-app-copper",
+      "svg": "svg/ooof-app-copper.svg",
+      "png": [
+        {
+          "file": "png/ooof-app-copper-16.png",
+          "width": 16,
+          "height": 16
+        },
+        {
+          "file": "png/ooof-app-copper-32.png",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "file": "png/ooof-app-copper-48.png",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "file": "png/ooof-app-copper-180.png",
+          "width": 180,
+          "height": 180
+        },
+        {
+          "file": "png/ooof-app-copper-192.png",
+          "width": 192,
+          "height": 192
+        },
+        {
+          "file": "png/ooof-app-copper-512.png",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "file": "png/ooof-app-copper-1024.png",
+          "width": 1024,
+          "height": 1024
+        }
+      ],
+      "usage": "Opaque square app icon. Platform applies its own corner mask."
+    }
+  ]
+}

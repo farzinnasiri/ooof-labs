@@ -25,8 +25,8 @@
   --muted: #536968;
   --accent: #b24730;
   --on-accent: #fff8ef;
-  --ring: #24575a;
-  --ring-alt: #b65a43;
+  --ring: #153f42;
+  --ring-alt: #b24730;
   --rule: #153f422b;
   --example: #153f42;
   --on-example: #eef4ef;
@@ -51,7 +51,7 @@
   --muted: #b1c7c1;
   --accent: #f0a67d;
   --on-accent: #172c2e;
-  --ring: #a5c4bd;
+  --ring: #eef4ef;
   --ring-alt: #f0a67d;
   --rule: #eef4ef2b;
   --example: #1c3b3f;
@@ -189,7 +189,7 @@ button:active {
   gap: 9px;
 }
 .brand-mark {
-  width: 125px;
+  width: 163px;
   height: auto;
   overflow: visible;
 }
@@ -309,19 +309,82 @@ h1 {
 .hero-people {
   display: grid;
   place-items: center;
-  padding: 8px 0 6px;
+  /* Reserve space for the f ascender above the shared O-height box. */
+  padding: clamp(42px, 6svh, 64px) 0 6px;
   min-height: min-content;
 }
 .brand-stage {
+  position: relative;
   --o-size: clamp(180px, calc(100svh - 600px), 400px);
-  width: min(100%, calc(var(--o-size) * 3.8));
+  width: min(100%, calc(var(--o-size) * 3.94));
   margin-inline: auto;
+}
+.brand-connections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0;
+}
+.brand-signal {
+  fill: none;
+  stroke: #f0a67d;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 85 915;
+}
+:root[data-theme="dark"] .brand-signal {
+  stroke: #b24730;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .is-ambient .brand-connections {
+    opacity: 0.85;
+    transition: opacity 220ms var(--ease);
+  }
+  .brand-stage:has(.founder:focus-visible) .brand-connections {
+    opacity: 0;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .brand-stage:has(.founder:hover) .brand-connections {
+    opacity: 0;
+  }
+}
+.motion-toggle {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+}
+.motion-toggle svg {
+  width: 17px;
+  height: 17px;
+}
+.motion-toggle[hidden],
+.motion-toggle .motion-play,
+.motion-toggle[aria-pressed="true"] .motion-pause {
+  display: none;
+}
+.motion-toggle[aria-pressed="true"] .motion-play {
+  display: block;
+}
+.motion-toggle:hover {
+  color: var(--ink);
 }
 .founders {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) 0.8fr;
+  grid-template-columns: repeat(3, minmax(0, 100fr)) 82fr;
   align-items: start;
-  gap: 0;
+  gap: 1.01523%;
   scroll-margin-top: 24px;
 }
 .founder {
@@ -329,33 +392,41 @@ h1 {
   position: relative;
   min-width: 0;
 }
-/* There is no second inner outline. One photo mask touches a solid fixed ring. */
+/* The photo extends under the frame. Only the outer silhouette is clipped,
+   so the two antialiased inner edges never expose the page background. */
 .portrait-ring {
   position: relative;
   display: block;
   width: 100%;
   aspect-ratio: 1;
   isolation: isolate;
-  overflow: hidden;
-  background: var(--ring);
-  border-radius: 46%;
+  overflow: visible;
+  color: var(--ring);
 }
 .founder-ali .portrait-ring {
-  background: var(--ring-alt);
+  color: var(--ring-alt);
+}
+.portrait-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
 }
 .portrait-window {
   position: absolute;
   display: block;
-  inset: 13.5%;
+  inset: 0;
   overflow: hidden;
-  border-radius: 43%;
+  clip-path: url(#portrait-silhouette);
   z-index: 1;
-  background: var(--ring);
+  background: currentColor;
 }
 .portrait-source {
   position: absolute;
   display: block;
-  inset: -1px;
+  inset: 13.5%;
 }
 .founder-image {
   position: absolute;
@@ -433,19 +504,53 @@ h1 {
   width: 13px;
   height: 13px;
 }
-/* Exact user-authored SVG and draw, including its ascender and joining crossbar. */
+/* The f shares the exported wordmark geometry and 14-unit wall thickness. */
 .founder-f {
   position: relative;
   z-index: 3;
   width: 100%;
-  margin-left: -0.6%;
   color: var(--ring);
 }
-.founder-f svg {
+.founder-f > svg {
   display: block;
   width: 100%;
   height: auto;
   overflow: visible;
+}
+.f-stem,
+.f-bar {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .portrait-ring {
+    transition: transform 460ms cubic-bezier(0.22, 1.25, 0.36, 1);
+  }
+  .brand-stage:not(.is-introducing) .founder:focus-visible .portrait-ring {
+    transform: translateY(-8px) scale(1.025);
+  }
+  .header-contact .icon,
+  .primary-action .icon,
+  .founder-link .icon,
+  .hero-next .icon {
+    transition: transform 220ms var(--ease);
+  }
+  .founder:focus-visible .founder-link .icon {
+    transform: translate(2px, -2px);
+  }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .brand-stage:not(.is-introducing) .founder:hover .portrait-ring {
+    transform: translateY(-8px) scale(1.025);
+  }
+  .founder:hover .founder-link .icon,
+  .header-contact:hover .icon,
+  .primary-action:hover .icon {
+    transform: translate(2px, -2px);
+  }
+  .hero-next:hover .icon {
+    transform: translateY(3px);
+  }
 }
 .hero-baseline {
   display: flex;
@@ -471,11 +576,6 @@ h1 {
   font-size: 11px;
   color: var(--muted);
 }
-@keyframes draw {
-  from {
-    stroke-dashoffset: 1;
-  }
-}
 @keyframes connect {
   from {
     transform: scaleY(0);
@@ -485,17 +585,6 @@ h1 {
   }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .f-stem,
-  .f-bar {
-    stroke-dasharray: 1;
-    animation: draw 700ms var(--ease) both;
-  }
-  .f-stem {
-    animation-delay: 360ms;
-  }
-  .f-bar {
-    animation-delay: 620ms;
-  }
   .is-switching .flow-ai:after {
     animation: connect 350ms var(--ease);
   }
@@ -768,13 +857,14 @@ h1 {
     --header-height: 116px;
   }
   .site-header {
+    position: relative;
     height: var(--header-height);
     grid-template-columns: 1fr auto;
     grid-template-rows: 70px 44px;
     gap: 0 12px;
   }
   .brand-mark {
-    width: 98px;
+    width: 140px;
   }
   .brand-labs {
     font-size: 14px;
@@ -792,6 +882,11 @@ h1 {
     grid-column: 2;
     grid-row: 1;
     gap: 12px;
+  }
+  .motion-toggle {
+    position: absolute;
+    right: 0;
+    top: 70px;
   }
   .header-contact {
     display: none;
